@@ -1,0 +1,26 @@
+# BVR update history 
+- `20250607-1243`: Removed the changelog section in the CSS itself, since we have this file now.
+- `20250607-1235`: We are now on GitHub instead of my personal site! This change was to comply with Vencord update e7076f's new CSP. 
+### The changes below are from when this is still on my self-hosted CDN site. 
+- `20250530-1209`: (Finally) fixed alignment of the RHST when the update button is present. 
+- `20250517-1306`: Fixed alignment of the IH when you open a thread/post in full view. 
+- `20250503-1514`: Reworked the spacing above the DM button. It should now look properly on all platforms. 
+- `20250503-1358`: Undid some previous quick fixes as they have been merged upstream.
+- `20250428-0313`: Alignment fix for the RHST for VC related UIs, as well as the Channel selection screens.
+- `20250424-1001`: Deployed a quick fix for Vencord update cf78ddc where PlatformIndicators on the members list was not displaying correctly for some entries.
+- `20250422-0204`: Adjusted alignment for RHST and IH buttons when the right side chat (VC chat/thread/post) is opened.
+- `20250421-1325`: Alignment fix for the RHST. Also fixed the padding for the  typing/slowmode bar when the current chat is an annoucement channel.
+- `20250418-0211`: Fixed alignment of the collapsed chat search button.
+- `20250418-0121`: Fixed an issue where macOS clients would have its native window buttons overlap with the server list.
+- `20250418-0036`: Small adjustments to the bordering of the chat box and its bars.
+- `20250417-1124`: Restored the section dividers in the channel list (you can disable it again by uncommenting the removal code still in here) and made chat search an icon when unfocused.
+- `20250417-0350`: Restored the member list back to how it was in the old UI.
+- `20250417-0318`: Fixed an issue where the "notice bars" (such as Streamer Mode enabled, subscription reminders, View Server as Role, ...) were overlapping the top of the server list.
+- `20250416-2352`: Readded borders to the user area and chat box for visual aids. Compared to the unmodified look, the color looks less bright and therefore less distracting. The original bright color previously used for the user area is now instead used for the chat box when focused.
+- `20250416-2209`: Same fix but for the user area when you have an activity and not in a call.
+- `20250416-2123`: Fixed an issue where when the typing bar shows and you're replying to a message, the reply bar's top corners will still be rounded.
+- `20250416-2045`: Removed the Gift button on the chat box.
+- `20250416-2022`: Shrunk the size of the chat box, user area, typing/slowmode bar and spacing between chat contents & chat box. 
+- `20250416-1517`: Removed the "top bar click-through" fix in "No top bar new UI" snippet.  Turns out a segment of code in the "scrollable server list cut off fix" snippet was promoting the bar to be always on top, causing everything underneath it (in this case the RHST, see below) to be unclickable. Removing that fixed the problem, so this fix was no longer needed.
+- `20250416-1506`: Updated the comments and added credits to each snippet used.
+- `20250416-1320`: Initial upload.
