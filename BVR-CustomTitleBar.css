@@ -17,7 +17,7 @@
 
 /* ========== AREA: SERVER LIST BAR (NTB specific) ========== */
 [class^=tutorialContainer]:first-of-type {
-	top: calc(var(--custom-app-top-bar-height) + 12px);
+	top: calc(var(--custom-app-top-bar-height) + 12px) !important;
 }
 
 /* ========== AREA: TOP BARS (CTB specific) ========== */
