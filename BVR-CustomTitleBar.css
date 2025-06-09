@@ -57,8 +57,7 @@
 		> a[href="https://support.discord.com"] {
 			display: none; /* Discord, we don't need your useless help page... */
 		}
-		> [class^=button]
-		{
+		> [class^=button] {
 			height: 16px; 
 			width: 16px; 
 			padding: 3px 12px; 

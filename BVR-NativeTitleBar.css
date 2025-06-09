@@ -23,9 +23,19 @@
 
 /* ========== AREA: TOP BARS (NTB specific) ========== */
 
+/* Remove the help button */
+[class^=bar] {
+	> [class^=trailing] {
+		> a[href="https://support.discord.com"] { /* " */
+			display: none;
+		}
+	}
+}
+
 /* No top bar new UI (2nd import + this below) [surgedevs & me] */
 :root {
 	--vr-header-snippet-server-padding: 0px !important; /* See .tutorialContainer__1f388 */
+	--vr-header-snippet-space: 70px; /* Padding for the RHST. */
 	--custom-channel-textarea-text-area-height: 52px !important;
 }
 .platform-win, .platform-linux, .platform-web {
@@ -50,16 +60,10 @@
 	}
 }
 .visual-refresh {
-	.toolbar__9293f {
-		/* Padding for the RHST. 
-		   There is a variable that also controls this in the imported CSS, but I find that
-		   seeminly breaks when the horizontal size of the IH changes, so we use this */
-		padding-right: 8px;
-	}
 	.trailing_c38106 {
 		/* IH buttons without the built-in window buttons to it will look sticked to the right
 		   Remove this padding if you keep the window buttons */
-		padding-right: 8px;
+		padding-right: 12px;
 	}
 	.searchBar__1ac1c {
 		/* Alignment fix for search bar in Discover tab */
@@ -80,7 +84,7 @@
 .visual-refresh:has(.container__01ae2) { /* container__01ae2 = side chat */
 	/* Positioning for the RHST and IH buttons when side chat is opened (threads/VC chat) [still me] */
 	.container__9293f {
-		padding-right: 10px !important;
+		padding-right: 24px !important;
 	}
 	.trailing_c38106 {
 		right: 40px !important;
