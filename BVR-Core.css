@@ -46,12 +46,7 @@ div[class^=unreadMentionsIndicatorTop] {
 	/* Makes sure the notice bars on top (for things like Streamer Mode) won't overlap server list. 
 	   Based on evie.flower's code */
 	.notice__6e2b9 {
-		--custom-notice-bar-excess: 32px; /* The bars are somehow longer than 100%? */
 		width: calc(100% - var(--custom-guild-list-width) - var(--custom-notice-bar-excess)); 
-		left: var(--custom-guild-list-width);
-	}
-	.notice_c9e42f { /* And it differs between bars as well? (This is the "View server as role" bar) */
-		--custom-notice-bar-excess: 17px; 
 	}
 }
 
