@@ -29,7 +29,7 @@ div[class^="listItem"]:has([data-list-item-id="guildsnav___app-download-button"]
 	z-index: 1;
 }
 div[class^=itemsContainer_] > div[class^=stack_] {
-	margin-top: calc(var(--guildbar-avatar-size) + 16px) !important;
+	margin-top: calc(var(--guildbar-avatar-size) + 20px) !important;
 }
 div[class^=unreadMentionsIndicatorTop] {
 	margin-top: calc(var(--guildbar-avatar-size) + 16px) !important;
