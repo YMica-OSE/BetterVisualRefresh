@@ -1,80 +1,25 @@
-/* BETTER VISUAL REFRESH (Custom Title Bar edition) by Yae Mica.
+/* BETTER VISUAL REFRESH by Yae Mica.
    Restores the layout of the old UI to most areas of the new "Visual Refresh" UI without 
    breaking stuffs.
 
    Special thanks to the Vencord community server for these snippets. 
    Feel free to adjust to your liking. 
 
-   Usage: Add the following line to THE TOP your QuickCSS 
-   @import url("https://raw.githubusercontent.com/YMica-OSE/BetterVisualRefresh/refs/heads/main/BetterVisualRefresh-wbE.css");
-   If you want to modify the contents, either copy this entire file to QuickCSS, 
-   or upload this file to GitHub and change the import link to that.
-
-   Be sure to give it a read first so you know what's gonna happen. */
+   This file is the main core of the theme, containing most of the modifications that 
+   doesn't have to do with the titlebar. 
+   You can import this if you want to leave the titlebar untouched.
+*/
 
 /* Neccesary imports (MUST BE BEFORE ANY CSS CODE) */
 @import url("https://scattagain.github.io/VencordStuff/css/GuildbarRevert.css");
 @import url("https://raw.githubusercontent.com/KrstlSkll69/vc-snippets/refs/heads/main/OtherStuff/Search-As-Button.css");
 
-/* Revert guild list look (1st import) [scattagain] */
+/* ========== AREA: SERVER LIST BAR ========== */
+
+/* Revert guild icons look (1st import) [scattagain] */
 /* Also remove the web download button while at it [me] */
 div[class^="listItem"]:has([data-list-item-id="guildsnav___app-download-button"]) {
 	display: none !important;
-}
-
-/* Top bar redesign [julienraptor01] 
-   Special thanks to Klee for finding this */
-:root {
-	--custom-app-top-bar-height: 22px /* Define the height of the top bar */
-}
-[class^=bar] {
-	padding: unset; /* Force the top bar taking the whole width of the screen */
-	> [class^=title] {
-		position: relative; /* Make the title left aligned as it won't be absolute anymore */
-		padding-left: 8px; /* Make sure the title isn't directly against the edge */
-		> [class^=title] > [class^=icon] { /* Scale the icon down */
-			height: 16px; 
-			width: 16px;
-		}
-	}
-	> [class^=trailing] {
-		gap: unset; /* Make sure there is no space in between the buttons and window buttons */
-		> [class^=recentsIcon] {
-			&:hover {
-				background-color: var(--background-modifier-hover); /* Make the notification button have a correct hover effect */
-				color: var(--interactive-hover); /* Make the notification button have a correct hover effect */
-			}
-			> [class^=button] {
-				height: 16px;
-				width: 16px;
-				padding: 6px; /* Make the button take reasonable space */
-				> [class^=iconBadge] { /* Fix the position of the red dot */
-					bottom: 2px; 
-					right: 11px;
-				}
-			}
-		}
-		> a[href="https://support.discord.com"] {
-			display: none; /* Discord, we don't need your useless help page... */
-		}
-		> [class^=button]
-		{
-			height: 16px; 
-			width: 16px; 
-			padding: 3px 12px; 
-			&:hover
-			{
-				background-color: var(--background-modifier-hover); 
-				color: var(--interactive-hover); 
-			}
-		}
-		> [class^=winButtons] {
-			gap: unset; 
-			> [class^=winButton] {
-				width: 28px; 
-			}
-		}
-	}
 }
 
 /* Pin DMs icon to the top of guild list [xishiora] */
@@ -91,20 +36,13 @@ div[class^=unreadMentionsIndicatorTop] {
 	margin-top: calc(var(--guildbar-avatar-size) + 16px) !important;
 }
 
+/* ========== AREA: TOP BARS ========== */
+
 .visual-refresh {
 	.toolbar__9293f {
-		/* Padding for the RHST. 
-		   There is a variable that also controls this in the imported CSS, but I find that
-		   seeminly breaks when the horizontal size of the IH changes, so we use this */
-		padding-right: 20px;
 		.iconWrapper__9293f {
 			left: 4px; /* This also shifts the search icon when unfocused (see 3rd import) */
 		}
-	}
-	.searchBar__1ac1c {
-		/* Alignment fix for search bar in Discover tab */
-		position: relative;
-		right: 80px;
 	}
 	/* Makes sure the notice bars on top (for things like Streamer Mode) won't overlap server list. 
 	   Based on evie.flower's code */
@@ -112,30 +50,9 @@ div[class^=unreadMentionsIndicatorTop] {
 		--custom-notice-bar-excess: 32px; /* The bars are somehow longer than 100%? */
 		width: calc(100% - var(--custom-guild-list-width) - var(--custom-notice-bar-excess)); 
 		left: var(--custom-guild-list-width);
-		border-radius: 0px; /* Rounded corner elimination */
 	}
 	.notice_c9e42f { /* And it differs between bars as well? (This is the "View server as role" bar) */
 		--custom-notice-bar-excess: 17px; 
-	}
-}
-/* Account spacing of the RHST when there's the "Update Now!" button [me] */
-.visual-refresh:has(.button__85643[aria-label="Update Ready!"]) {
-	.toolbar__9293f {
-		padding-right: 55px !important;
-	}
-}
-/* Positioning for the RHST and IH buttons when side chat is opened (threads/VC chat) [still me] */
-.visual-refresh:has(.container__01ae2) { /* container__01ae2 = side chat */
-	.container__9293f {
-		padding-right: 10px !important;
-	}
-	.trailing_c38106 {
-		right: 40px !important;
-	}
-	.container__01ae2 {
-		.children__9293f {
-			margin-right: 100px;
-		}
 	}
 }
 
@@ -152,63 +69,7 @@ div[class^=unreadMentionsIndicatorTop] {
 	}
 }
 
-/* Remove 1px padding across the new UI (I forgot who I sourced this from, sorry) */
-.visual-refresh :is(
-	[class^="container_"],
-	[class^="chat_"][data-has-border=true],
-	[class^="sidebarList_"],
-	[class^="sidebarResizeHandle_"],),
-.visual-refresh.theme-midnight :is(
-	[class^="container_"],
-	[class^="content_"],
-	[class^="subtitleContainer_"]) {
-	border: 0px;
-}
-/* Uncomment this if you want to remove dividers between sections of the channel list */
-/* .visual-refresh [class^="sectionDivider_"] {
-	display: none;
-} */
-
-/* Remove the rounded corner on top left of the channel list panel [me]
-   (use when combined with removing top bar and using native title bar, or on web) 
-   Also includes some fixes from the snippet for when top bar is present, scrollable server list 
-   gets cut off on top by it [the.rabbit.disabler]
-   (modified to fit with removed top bar so won't work well if you choose to not axe it) */
-.title_c38106 {
-	background-color: transparent;
-	background: linear-gradient(to bottom, var(--background-base-lowest), #00000000);
-}
-.title_a7d72e {
-	-webkit-app-region: drag;
-}
-.sidebar_c48ade {
-	overflow: visible !important;
-	position: relative;
-}
-.sidebarList_c48ade {
-	margin-left: 72px;
-}
-.wrapper_ef3116{
-	position: absolute;
-	height: calc(100vh - 65px);
-}
-
-/* Compact context menu [.abbie] 
-   Taken from https://abbie.github.io/discord-css/import.css */
-div[class*="clickTrapContainer"] div[role="menu"] :is([id*="message-quickreact"], [id*="message-actions-quickreact"]) {
-	display: none;
-}
-div[class*="clickTrapContainer"] div[role="menu"] {
-	div[role="group"] {
-		padding: 0;
-	}
-	div:is([role="menuitem"],[role="menuitemcheckbox"]), div[class*="hideInteraction_"] {
-		padding: 4px;
-		&:not([class*="colorDanger_"], :hover) div[class*="label_"] {
-			color: var(--interactive-normal);
-		}
-	}
-}
+/* ========== AREA: RIGHT PANEL ========== */
 
 /* Make member list more compressed 
    (I can't find the source of this as many people have this in their snippets without credits) */
@@ -225,6 +86,8 @@ div[class*="clickTrapContainer"] div[role="menu"] {
 		}
 	}
 }
+
+/* ========== AREA: BOTTOM BARS ========== */
 
 /* Align chat box with user area (the box with your name-status-mute-deafen-settings combo) [refact0r] */
 .visual-refresh {
@@ -342,3 +205,39 @@ button[aria-label="Send a gift"] {
 	height: -webkit-fill-available;
 	bottom: 0px;
 }
+
+/* ========== EXTRA TWEAKS ========== */
+
+/* Compact context menu [.abbie] 
+   Taken from https://abbie.github.io/discord-css/import.css */
+div[class*="clickTrapContainer"] div[role="menu"] :is([id*="message-quickreact"], [id*="message-actions-quickreact"]) {
+	display: none;
+}
+div[class*="clickTrapContainer"] div[role="menu"] {
+	div[role="group"] {
+		padding: 0;
+	}
+	div:is([role="menuitem"],[role="menuitemcheckbox"]), div[class*="hideInteraction_"] {
+		padding: 4px;
+		&:not([class*="colorDanger_"], :hover) div[class*="label_"] {
+			color: var(--interactive-normal);
+		}
+	}
+}
+
+/* Remove 1px padding across the new UI (I forgot who I sourced this from, sorry) */
+.visual-refresh :is(
+	[class^="container_"],
+	[class^="chat_"][data-has-border=true],
+	[class^="sidebarList_"],
+	[class^="sidebarResizeHandle_"],),
+.visual-refresh.theme-midnight :is(
+	[class^="container_"],
+	[class^="content_"],
+	[class^="subtitleContainer_"]) {
+	border: 0px;
+}
+/* Uncomment this if you want to remove dividers between sections of the channel list */
+/* .visual-refresh [class^="sectionDivider_"] {
+	display: none;
+} */

@@ -1,0 +1,82 @@
+/* BETTER VISUAL REFRESH - Custom Title Bar edition - by Yae Mica.
+   Restores the layout of the old UI to most areas of the new "Visual Refresh" UI without 
+   breaking stuffs.
+
+   Special thanks to the Vencord community server for these snippets. 
+   Feel free to adjust to your liking. 
+
+   Usage: Add the following line to THE TOP your QuickCSS 
+   @import url("https://raw.githubusercontent.com/YMica-OSE/BetterVisualRefresh/refs/heads/main/BVR-CustomTitleBar.css");
+   If you want to modify the contents, either copy this entire file to QuickCSS, 
+   or upload this file to GitHub and change the import link to that.
+
+   Be sure to give it a read first so you know what's gonna happen. */
+   
+/* Neccesary imports (MUST BE BEFORE ANY CSS CODE) */
+@import url("https://raw.githubusercontent.com/YMica-OSE/BetterVisualRefresh/refs/heads/main/BVR-Core.css");
+
+/* ========== AREA: TOP BARS (CTB specific) ========== */
+
+/* Top bar redesign [julienraptor01] 
+   Special thanks to Klee for finding this */
+:root {
+	--custom-app-top-bar-height: 22px /* Define the height of the top bar */
+}
+[class^=bar] {
+	padding: unset; /* Force the top bar taking the whole width of the screen */
+	> [class^=title] {
+		position: relative; /* Make the title left aligned as it won't be absolute anymore */
+		padding-left: 8px; /* Make sure the title isn't directly against the edge */
+		> [class^=title] > [class^=icon] { /* Scale the icon down */
+			height: 16px; 
+			width: 16px;
+		}
+	}
+	> [class^=trailing] {
+		gap: unset; /* Make sure there is no space in between the buttons and window buttons */
+		> [class^=recentsIcon] {
+			&:hover {
+				background-color: var(--background-modifier-hover); /* Make the notification button have a correct hover effect */
+				color: var(--interactive-hover); /* Make the notification button have a correct hover effect */
+			}
+			> [class^=button] {
+				height: 16px;
+				width: 16px;
+				padding: 6px; /* Make the button take reasonable space */
+				> [class^=iconBadge] { /* Fix the position of the red dot */
+					bottom: 2px; 
+					right: 11px;
+				}
+			}
+		}
+		> a[href="https://support.discord.com"] {
+			display: none; /* Discord, we don't need your useless help page... */
+		}
+		> [class^=button]
+		{
+			height: 16px; 
+			width: 16px; 
+			padding: 3px 12px; 
+			&:hover
+			{
+				background-color: var(--background-modifier-hover); 
+				color: var(--interactive-hover); 
+			}
+		}
+		> [class^=winButtons] {
+			gap: unset; 
+			> [class^=winButton] {
+				width: 28px; 
+			}
+		}
+	}
+}
+.visual-refresh {
+	.toolbar__9293f {
+		/* Padding for the RHST. 
+		   There is a variable that also controls this in the imported CSS, but I find that
+		   seeminly breaks when the horizontal size of the IH changes, so we use this */
+		padding-right: 20px;
+	}
+}
+

@@ -1,0 +1,140 @@
+/* BETTER VISUAL REFRESH - Native Title Bar edition - by Yae Mica.
+   Restores the layout of the old UI to most areas of the new "Visual Refresh" UI without 
+   breaking stuffs.
+
+   Special thanks to the Vencord community server for these snippets. 
+   Feel free to adjust to your liking. 
+
+   Usage: Add the following line to THE TOP your QuickCSS 
+   @import url("https://raw.githubusercontent.com/YMica-OSE/BetterVisualRefresh/refs/heads/main/BVR-NativeTitleBar.css");
+   If you want to modify the contents, either copy this entire file to QuickCSS, 
+   or upload this file to GitHub and change the import link to that.
+
+   Be sure to give it a read first so you know what's gonna happen. */
+
+/* Neccesary imports (MUST BE BEFORE ANY CSS CODE) */
+@import url("https://raw.githubusercontent.com/YMica-OSE/BetterVisualRefresh/refs/heads/main/BVR-Core.css");
+@import url("https://raw.githubusercontent.com/surgedevs/visual-refresh-compact-title-bar/refs/heads/main/browser.css"); /* (!) */
+
+/* ========== AREA: TOP BARS (NTB specific) ========== */
+
+/* No top bar new UI (2nd import + this below) [surgedevs & me] */
+:root {
+	--vr-header-snippet-server-padding: 0px !important; /* See .tutorialContainer__1f388 */
+	--custom-channel-textarea-text-area-height: 52px !important;
+}
+.platform-win, .platform-linux, .platform-web {
+	/* Controls the space above the DMs/Discord icon button for other platforms. 
+	   12px was the size on the old UI 
+	   The reason why we are doing this instead of the variable is because doing 
+	   so creates a top gap when you scroll up. */
+	.tutorialContainer__1f388 {
+		margin-top: 12px !important;
+	}
+}
+.platform-osx { /* Control for macOS clients to account for the "traffic lights" */
+	.tutorialContainer__1f388 {
+		margin-top: 34px !important;
+	}
+	.mention__3b95d {
+		margin-top: 34px;
+	}
+	[class^="stack_dbd263 scroller_ef3116"] {
+		/* Add top soft-edge for when you scroll */
+		mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 24px, rgba(0, 0, 0, 1) 34px);
+	}
+}
+.visual-refresh {
+	.toolbar__9293f {
+		/* Padding for the RHST. 
+		   There is a variable that also controls this in the imported CSS, but I find that
+		   seeminly breaks when the horizontal size of the IH changes, so we use this */
+		padding-right: 8px;
+	}
+	.trailing_c38106 {
+		/* IH buttons without the built-in window buttons to it will look sticked to the right
+		   Remove this padding if you keep the window buttons */
+		padding-right: 8px;
+	}
+	.searchBar__1ac1c {
+		/* Alignment fix for search bar in Discover tab */
+		position: relative;
+		right: 80px;
+	}
+	/* Rounded corner elimination for top bars */
+	.notice__6e2b9 {
+		border-radius: 0px; 
+	}
+}
+.visual-refresh:has(.button__85643[aria-label="Update Ready!"]) {
+	/* Account spacing of the RHST when there's the "Update Now!" button [me] */
+	.toolbar__9293f {
+		padding-right: 55px !important;
+	}
+}
+.visual-refresh:has(.container__01ae2) { /* container__01ae2 = side chat */
+	/* Positioning for the RHST and IH buttons when side chat is opened (threads/VC chat) [still me] */
+	.container__9293f {
+		padding-right: 10px !important;
+	}
+	.trailing_c38106 {
+		right: 40px !important;
+	}
+	.container__01ae2 {
+		.children__9293f {
+			margin-right: 100px;
+		}
+	}
+}
+.visual-refresh:has(.container__01ae2):has(.iconWrapper__9293f[aria-label="More"]) { 
+	/* Side chat with the "more" (...) button */
+	.trailing_c38106 {
+		right: 80px !important;
+	}
+}
+.visual-refresh:has(.returnButton__0b563) {
+	/* Hide the button in the Channel select page since it goes nowhere */
+	.trailing_c38106 {
+		display: none;
+	}
+}
+.visual-refresh:has(div[class^=notice_]) {
+	/* Top padding for when the top banner shows */
+	.trailing_c38106 {
+		top: 36px;
+	}
+}
+
+/* Remove built-in window buttons on clients. For use with native titlebar and browser.css [me] */
+div[class^="winButtons"] {
+	display: none !important;
+}
+
+/* Remove the rounded corner on top left of the channel list panel [me]
+   (use when combined with removing top bar and using native title bar, or on web) 
+   Also includes some fixes from the snippet for when top bar is present, scrollable server list 
+   gets cut off on top by it [the.rabbit.disabler]
+   (modified to fit with removed top bar so won't work well if you choose to not axe it) */
+.visual-refresh {
+	.sidebarListRounded_c48ade {
+		border-top-left-radius: 0px;
+	}
+}
+.title_c38106 {
+	background-color: transparent;
+	background: linear-gradient(to bottom, var(--background-base-lowest), #00000000);
+}
+.title_a7d72e {
+	-webkit-app-region: drag;
+}
+.sidebar_c48ade {
+	overflow: visible !important;
+	position: relative;
+}
+.sidebarList_c48ade {
+	margin-left: 72px;
+}
+.wrapper_ef3116{
+	position: absolute;
+	height: calc(100vh - 65px);
+}
