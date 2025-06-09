@@ -15,6 +15,11 @@
 /* Neccesary imports (MUST BE BEFORE ANY CSS CODE) */
 @import url("https://raw.githubusercontent.com/YMica-OSE/BetterVisualRefresh/refs/heads/main/BVR-Core.css");
 
+/* ========== AREA: SERVER LIST BAR (NTB specific) ========== */
+[class^=tutorialContainer]:first-of-type {
+	top: calc(var(--custom-app-top-bar-height) + 8px);
+}
+
 /* ========== AREA: TOP BARS (CTB specific) ========== */
 
 /* Top bar redesign [julienraptor01] 

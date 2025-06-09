@@ -16,6 +16,11 @@
 @import url("https://raw.githubusercontent.com/YMica-OSE/BetterVisualRefresh/refs/heads/main/BVR-Core.css");
 @import url("https://raw.githubusercontent.com/surgedevs/visual-refresh-compact-title-bar/refs/heads/main/browser.css"); /* (!) */
 
+/* ========== AREA: SERVER LIST BAR (NTB specific) ========== */
+[class^=tutorialContainer]:first-of-type {
+	top: 0;
+}
+
 /* ========== AREA: TOP BARS (NTB specific) ========== */
 
 /* No top bar new UI (2nd import + this below) [surgedevs & me] */
@@ -111,30 +116,9 @@ div[class^="winButtons"] {
 }
 
 /* Remove the rounded corner on top left of the channel list panel [me]
-   (use when combined with removing top bar and using native title bar, or on web) 
-   Also includes some fixes from the snippet for when top bar is present, scrollable server list 
-   gets cut off on top by it [the.rabbit.disabler]
-   (modified to fit with removed top bar so won't work well if you choose to not axe it) */
+   (use when combined with removing top bar and using native title bar, or on web) */
 .visual-refresh {
 	.sidebarListRounded_c48ade {
 		border-top-left-radius: 0px;
 	}
-}
-.title_c38106 {
-	background-color: transparent;
-	background: linear-gradient(to bottom, var(--background-base-lowest), #00000000);
-}
-.title_a7d72e {
-	-webkit-app-region: drag;
-}
-.sidebar_c48ade {
-	overflow: visible !important;
-	position: relative;
-}
-.sidebarList_c48ade {
-	margin-left: 72px;
-}
-.wrapper_ef3116{
-	position: absolute;
-	height: calc(100vh - 65px);
 }

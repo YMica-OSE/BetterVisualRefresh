@@ -25,7 +25,6 @@ div[class^="listItem"]:has([data-list-item-id="guildsnav___app-download-button"]
 /* Pin DMs icon to the top of guild list [xishiora] */
 [class^=tutorialContainer]:first-of-type {
 	position: fixed !important;
-	top: calc(var(--custom-app-top-bar-height) + 8px);
 	left: 0;
 	z-index: 1;
 }
