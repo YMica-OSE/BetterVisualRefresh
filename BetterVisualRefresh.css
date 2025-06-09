@@ -155,13 +155,6 @@ div[class^="listItem"]:has([data-list-item-id="guildsnav___app-download-button"]
 div[class^="winButtons"] {
 	display: none !important;
 }
-/* Make the window buttons clickable (see above). [also me]
-   For use with clients with native titlebar disabled (comment out the removal one of course)  */
-/* 
-div[class^="winButtons"] {
-	pointer-events: auto;
-}
-*/
 
 /* Remove 1px padding across the new UI (I forgot who I sourced this from, sorry) */
 .visual-refresh :is(
@@ -209,6 +202,23 @@ div[class^="winButtons"] {
 	height: calc(100vh - 65px);
 }
 
+/* Compact context menu [.abbie] 
+   Taken from https://abbie.github.io/discord-css/import.css */
+div[class*="clickTrapContainer"] div[role="menu"] :is([id*="message-quickreact"], [id*="message-actions-quickreact"]) {
+	display: none;
+}
+div[class*="clickTrapContainer"] div[role="menu"] {
+	div[role="group"] {
+		padding: 0;
+	}
+	div:is([role="menuitem"],[role="menuitemcheckbox"]), div[class*="hideInteraction_"] {
+		padding: 4px;
+		&:not([class*="colorDanger_"], :hover) div[class*="label_"] {
+			color: var(--interactive-normal);
+		}
+	}
+}
+
 /* Make member list more compressed 
    (I can't find the source of this as many people have this in their snippets without credits) */
 .membersWrap_c8ffbb {
@@ -222,9 +232,6 @@ div[class^="winButtons"] {
 		.member__5d473>.childContainer__91a9d { /* Paddings for list items */
 			padding: 0px;
 		}
-		/* .name__91a9d { (Quick fix for PlatformIndicators on Vencord cf78ddc, no longer needed)
-			width: unset !important;
-		} */
 	}
 }
 
@@ -344,18 +351,3 @@ button[aria-label="Send a gift"] {
 	height: -webkit-fill-available;
 	bottom: 0px;
 }
-
-/* Revert user area [evie.flowers]
-   (Remove or comment the fix one first) */
-/*
-.visual-refresh section[aria-label="User area"] {
-	width: calc(var(--custom-guild-sidebar-width) - var(--custom-guild-list-width) + 1px);
-	left: var(--custom-guild-list-width);
-	bottom: 0px;
-	border-radius: 0px;
-	border: none;
-}
-.visual-refresh nav:has([data-list-id="guildsnav"]) {
-	margin-bottom: unset;
-}
-*/
