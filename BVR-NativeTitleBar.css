@@ -17,8 +17,15 @@
 @import url("https://raw.githubusercontent.com/surgedevs/visual-refresh-compact-title-bar/refs/heads/main/browser.css"); /* (!) */
 
 /* ========== AREA: SERVER LIST BAR (NTB specific) ========== */
+/* Pin DMs icon to the top of guild list [xishiora] */
 [class^=tutorialContainer]:first-of-type {
 	top: 0;
+}
+div[class^=itemsContainer_] > div[class^=stack_] {
+	margin-top: calc(var(--guildbar-avatar-size) + 18px) !important;
+}
+div[class^=unreadMentionsIndicatorTop] {
+	margin-top: calc(var(--guildbar-avatar-size) + 18px) !important;
 }
 
 /* ========== AREA: TOP BARS (NTB specific) ========== */
