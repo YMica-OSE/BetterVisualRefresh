@@ -61,10 +61,6 @@ div[class^=unreadMentionsIndicatorTop] {
 	.mention__3b95d {
 		margin-top: 34px;
 	}
-	[class^="stack_dbd263 scroller_ef3116"] {
-		/* Add top soft-edge for when you scroll */
-		mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 24px, rgba(0, 0, 0, 1) 34px);
-	}
 }
 .visual-refresh {
 	.trailing_c38106 {

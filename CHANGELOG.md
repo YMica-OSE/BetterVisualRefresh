@@ -1,6 +1,10 @@
 # BVR update history 
+- `20250610-1559`: A major update to the theme (yes, it's now called a theme). 
+  - Native title-bar is no longer compulsory, as we have a new theme variant! This version aims to restore the custom title-bar used by Discord since the beginning of time, and is best used with clients that supports it like the official ones, or Vesktop. Do note that this theme is not intended for use with macOS clients or web. 
+  - In order to have 2 variants up at the same time, the CSS was split into 3 files: `BVR-Core` which contains code used between both variants, and `BVR-NativeTitleBar`, `BVR-CustomTitleBar` which are the theme variants themselves and the ones that you import from now on. 
+  - I've also attempted to reorganize the code a bit, adding comments indicating which part of the file is for which section of the UI. Still not the best code as I'm no CSS expert, but it's at least easier to read and maintain now. 
 - `20250607-1243`: Removed the changelog section in the CSS itself, since we have this file now.
-- `20250607-1235`: We are now on GitHub instead of my personal site! This change was to comply with Vencord update e7076f's new CSP. 
+- `20250607-1235`: We are now on GitHub instead of my personal site! This change was to comply with Vencord update e7076f's new Content Security Polic (CSP), which only allows loading from GitHub, GitLab, and some other trusted sites. 
 ### The changes below are from when this is still on my self-hosted CDN site. 
 - `20250530-1209`: (Finally) fixed alignment of the RHST when the update button is present. 
 - `20250517-1306`: Fixed alignment of the IH when you open a thread/post in full view. 
