@@ -95,7 +95,7 @@ div[class^="listItem"]:has([data-list-item-id="guildsnav___app-download-button"]
 		left: 0px;
 		right: 0px;
 		height: 18px;
-		background-color: var(--background-secondary);
+		background-color: var(--chat-background-default);
 		padding: 0 8px;
 		border-radius: var(--radius-sm) var(--radius-sm) 0 0;
 		border: 1px solid var(--chatbar-border-color);
