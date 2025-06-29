@@ -1,4 +1,5 @@
 # BVR update history 
+- `20250630-0019`: Fixed the typing/slowmode bar being completely transparent for both variants after recent Discord updates. 
 - `20250610-1559`: A major update to the theme (yes, it's now called a theme). 
   - Native title-bar is no longer compulsory, as we have a new theme variant! This version aims to restore the custom title-bar used by Discord since the beginning of time, and is best used with clients that supports it like the official ones, or Vesktop. Do note that this theme is not intended for use with macOS clients or web. 
   - In order to have 2 variants up at the same time, the CSS was split into 3 files: `BVR-Core` which contains code used between both variants, and `BVR-NativeTitleBar`, `BVR-CustomTitleBar` which are the theme variants themselves and the ones that you import from now on. 
@@ -13,7 +14,7 @@
 - `20250428-0313`: Alignment fix for the RHST for VC related UIs, as well as the Channel selection screens.
 - `20250424-1001`: Deployed a quick fix for Vencord update cf78ddc where PlatformIndicators on the members list was not displaying correctly for some entries.
 - `20250422-0204`: Adjusted alignment for RHST and IH buttons when the right side chat (VC chat/thread/post) is opened.
-- `20250421-1325`: Alignment fix for the RHST. Also fixed the padding for the  typing/slowmode bar when the current chat is an annoucement channel.
+- `20250421-1325`: Alignment fix for the RHST. Also fixed the padding for the typing/slowmode bar when the current chat is an annoucement channel.
 - `20250418-0211`: Fixed alignment of the collapsed chat search button.
 - `20250418-0121`: Fixed an issue where macOS clients would have its native window buttons overlap with the server list.
 - `20250418-0036`: Small adjustments to the bordering of the chat box and its bars.
