@@ -56,10 +56,10 @@ div[class^=unreadMentionsIndicatorTop] {
 }
 .platform-osx { /* Control for macOS clients to account for the "traffic lights" */
 	.tutorialContainer__1f388 {
-		margin-top: 34px !important;
+		margin-top: 48px !important;
 	}
 	.mention__3b95d {
-		margin-top: 34px;
+		margin-top: 48px;
 	}
 }
 .visual-refresh {

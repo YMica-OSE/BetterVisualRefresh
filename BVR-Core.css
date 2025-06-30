@@ -1,4 +1,5 @@
 /* BETTER VISUAL REFRESH by Yae Mica.
+/* BETTER VISUAL REFRESH by Yae Mica.
    Restores the layout of the old UI to most areas of the new "Visual Refresh" UI without 
    breaking stuffs.
 
@@ -89,6 +90,9 @@ div[class^="listItem"]:has([data-list-item-id="guildsnav___app-download-button"]
 		margin: 0;
 		border-color: var(--chatbar-border-color);
 		transition: none;
+	}
+	.textArea__74017 {
+		left: 12px; /* Don't know why but at 20250701-0336 the chat box had its left completely gone */
 	}
 	.base_b88801 { /* Typing indicator & Slow mode bar */
 		top: -18px;
