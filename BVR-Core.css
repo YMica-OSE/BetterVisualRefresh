@@ -92,7 +92,7 @@ div[class^="listItem"]:has([data-list-item-id="guildsnav___app-download-button"]
 		transition: none;
 	}
 	.textArea__74017 {
-		left: 12px; /* Don't know why but at 20250701-0336 the chat box had its left completely gone */
+		margin-left: 12px; /* Don't know why but at 20250701-0336 the chat box had its left completely gone */
 	}
 	.base_b88801 { /* Typing indicator & Slow mode bar */
 		top: -18px;

@@ -1,4 +1,5 @@
 # BVR update history 
+- `20250703-0329`: Fixed broken server bar alignment on macOS, as well as the chat box having weird margins across all themes. 
 - `20250630-0019`: Fixed the typing/slowmode bar being completely transparent for both variants after recent Discord updates. 
 - `20250610-1559`: A major update to the theme (yes, it's now called a theme). 
   - Native title-bar is no longer compulsory, as we have a new theme variant! This version aims to restore the custom title-bar used by Discord since the beginning of time, and is best used with clients that supports it like the official ones, or Vesktop. Do note that this theme is not intended for use with macOS clients or web. 
