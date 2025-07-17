@@ -43,13 +43,14 @@ div[class^=unreadMentionsIndicatorTop] {
 		background-position-y: center;
 		left: calc(var(--space-sm) - 3px);
 		top: 1px;
+		z-index: 10240;
 		/* remove redundant titles */
 		> .title__85643 {
 			display: none;
 		}
 	}
 	> [class^=trailing] {
-		z-index: 102;
+		z-index: 10240;
 		gap: unset; /* Make sure there is no space in between the buttons and window buttons */
 		> [class^=recentsIcon] {
 			&:hover {
@@ -88,6 +89,11 @@ div[class^=unreadMentionsIndicatorTop] {
 				width: 28px; 
 			}
 		}
+	}
+}
+.visual-refresh:has(.backdrop__78332) {
+	[class^=trailing] {
+		z-index: 102 !important;
 	}
 }
 .visual-refresh {

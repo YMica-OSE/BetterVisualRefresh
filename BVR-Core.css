@@ -1,5 +1,4 @@
 /* BETTER VISUAL REFRESH by Yae Mica.
-/* BETTER VISUAL REFRESH by Yae Mica.
    Restores the layout of the old UI to most areas of the new "Visual Refresh" UI without 
    breaking stuffs.
 
@@ -13,7 +12,6 @@
 
 /* Neccesary imports (MUST BE BEFORE ANY CSS CODE) */
 @import url("https://scattagain.github.io/VencordStuff/css/GuildbarRevert.css");
-@import url("https://raw.githubusercontent.com/KrstlSkll69/vc-snippets/refs/heads/main/OtherStuff/Search-As-Button.css");
 
 /* ========== AREA: SERVER LIST BAR ========== */
 
@@ -45,10 +43,9 @@ div[class^="listItem"]:has([data-list-item-id="guildsnav___app-download-button"]
 	}
 }
 
-/* Make search box a button when unfocused (3rd import) [KrstlSkll69] */
-/* Fix the icon alignment [me] */
-.icon_fea832 {
-	left: 8px;
+/* Make search box shorter unfocused [me, taken from KrstlSkll69] */
+.search__97492:not(.open__97492)>.searchBar__97492 {
+	width: 30px;
 }
 
 /* Remove the unneccesary invite button on the server banner (me) */
