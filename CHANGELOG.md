@@ -1,4 +1,7 @@
 # BVR update history 
+- `20250717-0334`: Two changes:
+  - Adapted the unfocused search box to a shorter box instead of an icon now that Discord broke the icon itself.
+  - For those who use Custom title-bar variant of the theme, the IH & window buttons should now appear during the loading screen (or when internet is lost), and the Discord text logo should now appear in all screens except Settings.
 - `20250703-0329`: Fixed broken server bar alignment on macOS, as well as the chat box having weird margins across all themes. 
 - `20250630-0019`: Fixed the typing/slowmode bar being completely transparent for both variants after recent Discord updates. 
 - `20250610-1559`: A major update to the theme (yes, it's now called a theme). 
