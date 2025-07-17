@@ -45,7 +45,7 @@ div[class^="listItem"]:has([data-list-item-id="guildsnav___app-download-button"]
 
 /* Make search box shorter unfocused [me, taken from KrstlSkll69] */
 .search__97492:not(.open__97492)>.searchBar__97492 {
-	width: 30px;
+	width: 84px;
 }
 
 /* Remove the unneccesary invite button on the server banner (me) */
