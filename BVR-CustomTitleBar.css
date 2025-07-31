@@ -7,8 +7,9 @@
 
    Usage: Add the following line to THE TOP your QuickCSS 
    @import url("https://raw.githubusercontent.com/YMica-OSE/BetterVisualRefresh/refs/heads/main/BVR-CustomTitleBar.css");
+   or add the URL to Online themes in Vencord settings.
    If you want to modify the contents, either copy this entire file to QuickCSS, 
-   or upload this file to GitHub and change the import link to that.
+   or fork this repository and change the import link to yours.
 
    Be sure to give it a read first so you know what's gonna happen. */
    

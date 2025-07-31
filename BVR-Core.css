@@ -171,6 +171,9 @@ div[class^="listItem"]:has([data-list-item-id="guildsnav___app-download-button"]
 .visual-refresh [class^="attachWrapper_"] {
 	width: 26px;
 }
+.visual-refresh [class^=".attachButton_"] {
+	margin-left: calc((var(--space-6))*-1);
+}
 
 /* Remove Gift button [me] 
    (the label might change if you use another language)  */
