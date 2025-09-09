@@ -75,105 +75,8 @@ div[class^="listItem"]:has([data-list-item-id="guildsnav___app-download-button"]
 
 /* ========== AREA: BOTTOM BARS ========== */
 
-/* Align chat box with user area (the box with your name-status-mute-deafen-settings combo) [refact0r] */
-.visual-refresh {
-	--custom-channel-textarea-text-area-height: calc(52px); /* Chat box height (-4px for the border) */
-	.form_f75fb0 {
-		margin: 0 8px 8px 8px;
-		padding: 0;
-		--chatbar-border-color: var(--border-subtle);
-	}
-	.channelTextArea_f75fb0 { /* Chat input box */
-		margin: 0;
-		border-color: var(--chatbar-border-color);
-		transition: none;
-	}
-	.textArea__74017 {
-		margin-left: 12px; /* Don't know why but at 20250701-0336 the chat box had its left completely gone */
-	}
-	.base_b88801 { /* Typing indicator & Slow mode bar */
-		top: -18px;
-		left: 0px;
-		right: 0px;
-		height: 18px;
-		background-color: var(--chat-background-default);
-		padding: 0 8px;
-		border-radius: var(--radius-sm) var(--radius-sm) 0 0;
-		border: 1px solid var(--chatbar-border-color);
-		border-bottom: none;
-		transition: none;
-	}
-	.text_b88801 .wrapper__44b0c { /* Typing indicator (with fix for TypingTweaks's avatars) */
-		width: 14px !important;
-		height: 14px !important;
-		vertical-align: -2px;
-		.svg__44b0c {
-			width: 14px;
-			height: 14px;
-		}
-	}
-	.cooldownText_b21699 { /* Slow mode text & icon */
-		font-size: 11.5px;
-	}
-	.slowModeIcon_b21699 {
-		width: 14px !important;
-		height: 14px !important;
-	}
-	.stackedBars__74017,
-	.threadSuggestionBar__841c8 {
-		border-color: var(--chatbar-border-color) !important;
-	}
-	.clipContainer__841c8 {
-		padding-top: unset;
-	}
-	.form_f75fb0:has(.base_b88801) { /* When the typing & slow mode bar is present... */
-		/* Make everything below it have no rounded corners on their top */
-		.channelTextArea_f75fb0 { /* Top of the chat box */
-			border-radius: 0 0 var(--radius-sm) var(--radius-sm);
-		}
-		.replyBar__841c8 { 
-			border-radius: 0px;
-		}
-		.banner__183e8 { /* Server Guide banners */
-			border-radius: 0px;
-		}
-		.wrapper__44df5 { /* Annoucement channel "follow" bar */
-			border-radius: 0 0 var(--radius-sm) var(--radius-sm);
-		}
-	}
-	.form_f75fb0:has(.wrapper__44df5) {
-	/* Pad the typing bar as the follow bar is shorter */
-		.base_b88801 {
-			left: 8px;
-			right: 8px;
-		}
-	}
-	/* Brighter border when chat box is focused */
-	.channelTextArea__74017:focus-within { /* For chat box itself */
-		border-color: var(--app-border-frame) !important;
-	}
-	.form_f75fb0:has(.channelTextArea__74017:focus-within) { /* For typing/slowmode bar */
-		.base_b88801 {
-			border: 1px solid var(--app-border-frame);
-			border-bottom: none;
-		}
-	}
-	.scrollerSpacer__36d07 { /* Spacing between chat view & chat bar */
-		height: 22px;
-	}
-	.scroller__36d07::-webkit-scrollbar-track { /* Chat view scroll bar's bottom spacing */
-		margin-bottom: 20px;
-	}
-	.bottomBar__0f481 {
-		margin-bottom: 25px;
-	}
-}
-.visual-refresh [class^="attachWrapper_"] {
-	width: 26px;
-}
-.visual-refresh [class^="attachButton_"] {
-	margin-left: calc((var(--space-6))*-1);
-}
+/* Align chat box with user area (the box with your name-status-mute-deafen-settings combo) [refact0r]
+   As of 20250910-0152 this is wrecking havoc with the changed Discord made. As I cannot comment the entire block out, it has been temporarily removed */
 
 /* Remove Gift button [me] 
    (the label might change if you use another language)  */
@@ -181,7 +84,7 @@ button[aria-label="Send a gift"] {
 	display: none;
 }
 
-/* Match user area height with the chat box, plus some additional fixes [me] */
+/* Additional fixes [me] */
 .visual-refresh section[aria-label="User area"] {
 	.container__37e49 {
 		height: 52px;
