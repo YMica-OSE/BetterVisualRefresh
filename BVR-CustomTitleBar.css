@@ -46,7 +46,7 @@ div[class^=unreadMentionsIndicatorTop] {
 		top: 1px;
 		z-index: 10240;
 		/* remove redundant titles */
-		> .title__85643 {
+		> [class^=title] {
 			display: none;
 		}
 	}
@@ -83,6 +83,9 @@ div[class^=unreadMentionsIndicatorTop] {
 				background-color: var(--background-modifier-hover); 
 				color: var(--interactive-hover); 
 			}
+		}
+		> [class^=clickable] {
+			width: 16px;
 		}
 		> [class^=winButtons] {
 			gap: unset; 
