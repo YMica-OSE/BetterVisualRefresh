@@ -16,18 +16,6 @@
 /* Neccesary imports (MUST BE BEFORE ANY CSS CODE) */
 @import url("https://raw.githubusercontent.com/YMica-OSE/BetterVisualRefresh/refs/heads/main/BVR-Core.css");
 
-/* ========== AREA: SERVER LIST BAR (NTB specific) ========== */
-/* Pin DMs icon to the top of guild list [xishiora] */
-[class^=tutorialContainer]:first-of-type {
-	top: calc(var(--custom-app-top-bar-height) + 4px) !important;
-}
-div[class^=itemsContainer_] > div[class^=stack_] {
-	margin-top: calc(var(--guildbar-avatar-size) + 10px) !important;
-}
-div[class^=unreadMentionsIndicatorTop] {
-	margin-top: calc(var(--guildbar-avatar-size) + 10px) !important;
-}
-
 /* ========== AREA: TOP BARS (CTB specific) ========== */
 
 /* Top bar redesign [julienraptor01] 
@@ -95,17 +83,3 @@ div[class^=unreadMentionsIndicatorTop] {
 		}
 	}
 }
-div:has([class^=backdrop]) {
-	[class^=trailing] {
-		z-index: 102 !important;
-	}
-}
- {
-	[class^=toolbar] {
-		/* Padding for the RHST. 
-		   There is a variable that also controls this in the imported CSS, but I find that
-		   seeminly breaks when the horizontal size of the IH changes, so we use this */
-		padding-right: 20px;
-	}
-}
-

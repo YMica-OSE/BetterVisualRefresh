@@ -21,34 +21,11 @@ div[class^="listItem"]:has([data-list-item-id="guildsnav___app-download-button"]
 	display: none !important;
 }
 
-/* Pin DMs icon to the top of guild list [xishiora] */
-[class^=tutorialContainer]:first-of-type {
-	position: fixed !important;
-	left: 0;
-	z-index: 1;
-}
-
 /* ========== AREA: TOP BARS ========== */
-
-div[class^=toolbar] {
-	div[class^=iconWrapper] {
-		left: 4px; /* This also shifts the search icon when unfocused (see 3rd import) */
-	}
-}
-/* Makes sure the notice bars on top (for things like Streamer Mode) won't overlap server list. 
-   Based on evie.flower's code */
-div[class^=notice] {
-	width: calc(100% - var(--custom-guild-list-width) - var(--custom-notice-bar-excess)); 
-}
 
 /* Make search box shorter unfocused [me, taken from KrstlSkll69] */
 .search__97492:not(.open__97492)>.searchBar__97492 {
 	width: 84px;
-}
-
-/* Remove the unneccesary invite button on the server banner (me) */
-div[class^=inviteButton] {
-	display: none;
 }
 
 /* ========== AREA: RIGHT PANEL ========== */
@@ -73,19 +50,8 @@ div[class^=inviteButton] {
 
 /* Remove Gift button [me] 
    (the label might change if you use another language)  */
-button[aria-label="Send a gift"] {
+div[aria-label="Send a gift"] {
 	display: none;
-}
-/* Additional fixes [me] */
-section[aria-label="User area"] {
-	.container__37e49 {
-		height: 57px;
-	}
-	border-color: var(--border-subtle) !important;
-}
-nav:has([data-list-id="guildsnav"]) {
-	height: -webkit-fill-available;
-	bottom: 0px;
 }
 
 /* ========== EXTRA TWEAKS ========== */
@@ -107,19 +73,3 @@ div[class*="clickTrapContainer"] div[role="menu"] {
 	}
 }
 
-/* Remove 1px padding across the new UI (I forgot who I sourced this from, sorry) */
-:is(
-	[class^="container_"],
-	[class^="chat_"][data-has-border=true],
-	[class^="sidebarList_"],
-	[class^="sidebarResizeHandle_"],),
-.theme-midnight :is(
-	[class^="container_"],
-	[class^="content_"],
-	[class^="subtitleContainer_"]) {
-	border: 0px;
-}
-/* Uncomment this if you want to remove dividers between sections of the channel list */
-/*  [class^="sectionDivider_"] {
-	display: none;
-} */
