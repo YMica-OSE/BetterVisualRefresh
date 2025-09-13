@@ -30,17 +30,15 @@ div[class^="listItem"]:has([data-list-item-id="guildsnav___app-download-button"]
 
 /* ========== AREA: TOP BARS ========== */
 
-.visual-refresh {
-	.toolbar__9293f {
-		.iconWrapper__9293f {
-			left: 4px; /* This also shifts the search icon when unfocused (see 3rd import) */
-		}
+div[class^=toolbar] {
+	div[class^=iconWrapper] {
+		left: 4px; /* This also shifts the search icon when unfocused (see 3rd import) */
 	}
-	/* Makes sure the notice bars on top (for things like Streamer Mode) won't overlap server list. 
-	   Based on evie.flower's code */
-	.notice__6e2b9 {
-		width: calc(100% - var(--custom-guild-list-width) - var(--custom-notice-bar-excess)); 
-	}
+}
+/* Makes sure the notice bars on top (for things like Streamer Mode) won't overlap server list. 
+   Based on evie.flower's code */
+div[class^=notice] {
+	width: calc(100% - var(--custom-guild-list-width) - var(--custom-notice-bar-excess)); 
 }
 
 /* Make search box shorter unfocused [me, taken from KrstlSkll69] */
@@ -49,25 +47,23 @@ div[class^="listItem"]:has([data-list-item-id="guildsnav___app-download-button"]
 }
 
 /* Remove the unneccesary invite button on the server banner (me) */
-.visual-refresh {
-	.inviteButton_f37cb1 {
-		display: none;
-	}
+div[class^=inviteButton] {
+	display: none;
 }
 
 /* ========== AREA: RIGHT PANEL ========== */
 
 /* Make member list more compressed 
    (I can't find the source of this as many people have this in their snippets without credits) */
-.membersWrap_c8ffbb {
+[class^=membersWrap] {
 	min-width: unset;
-	>.members_c8ffbb {
+	> [class^=members] {
 		width: 240px;
-		.membersGroup_c8ffbb { /* Paddings for role names */
+		[class^=membersGroup] { /* Paddings for role names */
 			padding: 22px 0px 0 14px;
 			height: 40px;
 		}
-		.member__5d473>.childContainer__91a9d { /* Paddings for list items */
+		[class^=member] > [class^=childContainer] { /* Paddings for list items */
 			padding: 0px;
 		}
 	}
@@ -75,19 +71,23 @@ div[class^="listItem"]:has([data-list-item-id="guildsnav___app-download-button"]
 
 /* ========== AREA: BOTTOM BARS ========== */
 
+/* Chat box alignment */
+div[class^=textArea] {
+	top: 2.5px
+}
 /* Remove Gift button [me] 
    (the label might change if you use another language)  */
 button[aria-label="Send a gift"] {
 	display: none;
 }
 /* Additional fixes [me] */
-.visual-refresh section[aria-label="User area"] {
+section[aria-label="User area"] {
 	.container__37e49 {
 		height: 57px;
 	}
 	border-color: var(--border-subtle) !important;
 }
-.visual-refresh nav:has([data-list-id="guildsnav"]) {
+nav:has([data-list-id="guildsnav"]) {
 	height: -webkit-fill-available;
 	bottom: 0px;
 }
@@ -112,18 +112,18 @@ div[class*="clickTrapContainer"] div[role="menu"] {
 }
 
 /* Remove 1px padding across the new UI (I forgot who I sourced this from, sorry) */
-.visual-refresh :is(
+:is(
 	[class^="container_"],
 	[class^="chat_"][data-has-border=true],
 	[class^="sidebarList_"],
 	[class^="sidebarResizeHandle_"],),
-.visual-refresh.theme-midnight :is(
+.theme-midnight :is(
 	[class^="container_"],
 	[class^="content_"],
 	[class^="subtitleContainer_"]) {
 	border: 0px;
 }
 /* Uncomment this if you want to remove dividers between sections of the channel list */
-/* .visual-refresh [class^="sectionDivider_"] {
+/*  [class^="sectionDivider_"] {
 	display: none;
 } */

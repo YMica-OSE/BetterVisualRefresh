@@ -19,7 +19,7 @@
 
 /* ========== AREA: SERVER LIST BAR (NTB specific) ========== */
 /* Pin DMs icon to the top of guild list [xishiora] */
-[class^=tutorialContainer]:first-of-type {
+div[class^=tutorialContainer]:first-of-type {
 	top: 0;
 }
 
@@ -45,10 +45,10 @@
 	   12px was the size on the old UI 
 	   The reason why we are doing this instead of the variable is because doing 
 	   so creates a top gap when you scroll up. */
-	.tutorialContainer__1f388 {
+	[class^=tutorialContainer] {
 		margin-top: 12px !important;
 	}
-	div[class^=itemsContainer_] > div[class^=stack_] {
+	div[class^=itemsContainer] > div[class^=stack] {
 		margin-top: calc(var(--guildbar-avatar-size) + 18px) !important;
 	}
 	div[class^=unreadMentionsIndicatorTop] {
@@ -56,10 +56,10 @@
 	}
 }
 .platform-osx { /* Control for macOS clients to account for the "traffic lights" */
-	.tutorialContainer__1f388 {
+	[class^=tutorialContainer] {
 		margin-top: 34px !important;
 	}
-	.mention__3b95d {
+	[class^=mention] {
 		margin-top: 34px;
 	}
 	div[class^=itemsContainer_] > div[class^=stack_] {
@@ -69,31 +69,29 @@
 		margin-top: calc(var(--guildbar-avatar-size) + 30px) !important;
 	}
 }
-.visual-refresh {
-	.trailing_c38106 {
-		/* IH buttons without the built-in window buttons to it will look sticked to the right
-		   Remove this padding if you keep the window buttons */
-		padding-right: 12px;
-	}
-	.searchBar__1ac1c {
-		/* Alignment fix for search bar in Discover tab */
-		position: relative;
-		right: 80px;
-	}
-	/* Rounded corner elimination for top bars */
-	.notice__6e2b9 {
-		border-radius: 0px; 
-	}
+div[class^=trailing] {
+	/* IH buttons without the built-in window buttons to it will look sticked to the right
+	   Remove this padding if you keep the window buttons */
+	padding-right: 12px;
 }
-.visual-refresh:has(.container__01ae2) { /* container__01ae2 = side chat */
+div:[class^=searchBar] {
+	/* Alignment fix for search bar in Discover tab */
+	position: relative;
+	right: 80px;
+}
+/* Rounded corner elimination for top bars */
+div[class^=notice] {
+	border-radius: 0px; 
+}
+div:has(.container__01ae2) { /* container__01ae2 = side chat */
 	/* Positioning for the RHST and IH buttons when side chat is opened (threads/VC chat) [still me] */
 	.container__9293f {
 		padding-right: 24px !important;
 	}
-	.toolbar__9293f {
+	[class^=toolbar] {
 		padding-right: 0px !important;
 	}
-	.trailing_c38106 {
+	[class^=tutorialContainer] {
 		right: 40px !important;
 	}
 	.container__01ae2 {
@@ -102,32 +100,32 @@
 		}
 	}
 }
-.visual-refresh:has(.button__85643[aria-label="Update Ready!"]) {
+div:has(.button__85643[aria-label="Update Ready!"]) {
 	/* Account spacing of the RHST when there's the "Update Now!" button [me] */
 	.toolbar__9293f {
 		padding-right: 46px;
 	}
 }
-.visual-refresh:has(.container__01ae2):has(.iconWrapper__9293f[aria-label="More"]) { 
+div:has(.container__01ae2):has(.iconWrapper__9293f[aria-label="More"]) { 
 	/* Side chat with the "More" (...) button */
 	.trailing_c38106 {
 		right: 80px !important;
 	}
 }
-.visual-refresh:has(.container__01ae2):has(.iconWrapper__9293f[aria-label="Notification Settings"]) { 
+div:has(.container__01ae2):has(.iconWrapper__9293f[aria-label="Notification Settings"]) { 
 	/* Side chat with the "Notification Settings" (...) button (currently does not work) */
 	.trailing_c38106 {
 		right: 120px !important;
 	}
 }
-.visual-refresh:has(.returnButton__0b563) {
+div:has(div[class^=returnButton]) {
 	/* Account for the Channel select page */
 	.bar_c38106 {
 		position: relative !important;
 		top: 12px !important;
 	}
 }
-.visual-refresh:has(div[class^=notice_]) {
+div:has(div[class^=notice_]) {
 	/* Top padding for when the top banner shows */
 	.trailing_c38106 {
 		top: 38px;
@@ -141,8 +139,6 @@ div[class^="winButtons"] {
 
 /* Remove the rounded corner on top left of the channel list panel [me]
    (use when combined with removing top bar and using native title bar, or on web) */
-.visual-refresh {
-	.sidebarListRounded_c48ade {
-		border-top-left-radius: 0px;
-	}
+div[class^=sidebarListRounded] {
+	border-top-left-radius: 0px;
 }

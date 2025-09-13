@@ -95,13 +95,13 @@ div[class^=unreadMentionsIndicatorTop] {
 		}
 	}
 }
-.visual-refresh:has(.backdrop__78332) {
+div:has([class^=backdrop]) {
 	[class^=trailing] {
 		z-index: 102 !important;
 	}
 }
-.visual-refresh {
-	.toolbar__9293f {
+ {
+	[class^=toolbar] {
 		/* Padding for the RHST. 
 		   There is a variable that also controls this in the imported CSS, but I find that
 		   seeminly breaks when the horizontal size of the IH changes, so we use this */
