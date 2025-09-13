@@ -71,10 +71,6 @@ div[class^=inviteButton] {
 
 /* ========== AREA: BOTTOM BARS ========== */
 
-/* Chat box alignment */
-div[class^=textArea] {
-	top: 2.5px
-}
 /* Remove Gift button [me] 
    (the label might change if you use another language)  */
 button[aria-label="Send a gift"] {
