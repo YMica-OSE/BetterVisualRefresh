@@ -75,27 +75,12 @@ div[class^="listItem"]:has([data-list-item-id="guildsnav___app-download-button"]
 
 /* ========== AREA: BOTTOM BARS ========== */
 
-/* Align chat box with user area (the box with your name-status-mute-deafen-settings combo) [refact0r]
-   As of 20250910-0152 this is wrecking havoc with the changed Discord made. As I cannot comment the entire block out, it has been temporarily removed */
-
 /* Remove Gift button [me] 
    (the label might change if you use another language)  */
 button[aria-label="Send a gift"] {
 	display: none;
 }
-
 /* Additional fixes [me] */
-.visual-refresh section[aria-label="User area"] {
-	.container__37e49 {
-		height: 52px;
-	}
-	border-color: var(--border-subtle) !important;
-}
-.visual-refresh section[aria-label="User area"]:has(.activityPanel_c48ade) {
-	.container__37e49 {
-		border-radius: 0 0 var(--radius-sm) var(--radius-sm);
-	}
-}
 .visual-refresh nav:has([data-list-id="guildsnav"]) {
 	height: -webkit-fill-available;
 	bottom: 0px;
