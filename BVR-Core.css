@@ -81,6 +81,12 @@ button[aria-label="Send a gift"] {
 	display: none;
 }
 /* Additional fixes [me] */
+.visual-refresh section[aria-label="User area"] {
+	.container__37e49 {
+		height: 57px;
+	}
+	border-color: var(--border-subtle) !important;
+}
 .visual-refresh nav:has([data-list-id="guildsnav"]) {
 	height: -webkit-fill-available;
 	bottom: 0px;
