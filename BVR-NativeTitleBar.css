@@ -17,12 +17,6 @@
 @import url("https://raw.githubusercontent.com/YMica-OSE/BetterVisualRefresh/refs/heads/main/BVR-Core.css");
 @import url("https://raw.githubusercontent.com/surgedevs/visual-refresh-compact-title-bar/refs/heads/main/browser.css"); /* (!) */
 
-/* ========== AREA: SERVER LIST BAR (NTB specific) ========== */
-/* Pin DMs icon to the top of guild list [xishiora] */
-div[class^=tutorialContainer]:first-of-type {
-	top: 0;
-}
-
 /* ========== AREA: TOP BARS (NTB specific) ========== */
 
 /* Remove the help button */
@@ -36,7 +30,7 @@ div[class^=tutorialContainer]:first-of-type {
 
 /* No top bar new UI (2nd import + this below) [surgedevs & me] */
 :root {
-	--vr-header-snippet-server-padding: 0px !important; /* See .tutorialContainer__1f388 */
+	--vr-header-snippet-server-padding: 0px !important;
 	--vr-header-snippet-space: 70px; /* Padding for the RHST. */
 }
 .platform-win, .platform-linux, .platform-web {
@@ -45,27 +39,15 @@ div[class^=tutorialContainer]:first-of-type {
 	   The reason why we are doing this instead of the variable is because doing 
 	   so creates a top gap when you scroll up. */
 	div[class^=tutorialContainer]:first-of-type {
-		margin-top: 12px !important;
-	}
-	div[class^=itemsContainer] > div[class^=stack] {
-		margin-top: calc(var(--guildbar-avatar-size) + 18px) !important;
-	}
-	div[class^=unreadMentionsIndicatorTop] {
-		margin-top: calc(var(--guildbar-avatar-size) + 18px) !important;
+		margin-top: 10px !important;
 	}
 }
 .platform-osx { /* Control for macOS clients to account for the "traffic lights" */
 	div[class^=tutorialContainer]:first-of-type {
-		margin-top: 34px !important;
+		margin-top: 32px !important;
 	}
 	div[class^=mention] {
-		margin-top: 34px;
-	}
-	div[class^=itemsContainer_] > div[class^=stack_] {
-		margin-top: calc(var(--guildbar-avatar-size) + 30px) !important;
-	}
-	div[class^=unreadMentionsIndicatorTop] {
-		margin-top: calc(var(--guildbar-avatar-size) + 30px) !important;
+		margin-top: 32px;
 	}
 }
 div[class^=trailing] {
