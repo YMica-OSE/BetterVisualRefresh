@@ -5,8 +5,9 @@
    Special thanks to the Vencord community server for these snippets. 
    Feel free to adjust to your liking. 
 
-   Usage: Add the following line to THE TOP your QuickCSS 
+   Usage: Add ONE OF the following line to THE TOP your QuickCSS 
    @import url("https://raw.githubusercontent.com/YMica-OSE/BetterVisualRefresh/refs/heads/main/BetterVisualRefresh.css");
+   @import url("https://gitlab.com/sakura.osesoft/BetterVisualRefresh/-/raw/main/BetterVisualRefresh.css");
    or add the URL to Online themes in Vencord settings.
    If you want to modify the contents, either copy this entire file to QuickCSS, 
    or fork this repository and change the import link to yours.
