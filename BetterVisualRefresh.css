@@ -8,11 +8,11 @@
    Usage: Add ONE OF the following line to THE TOP your QuickCSS 
    @import url("https://raw.githubusercontent.com/YMica-OSE/BetterVisualRefresh/refs/heads/main/BetterVisualRefresh.css");
    @import url("https://gitlab.com/sakura.osesoft/BetterVisualRefresh/-/raw/main/BetterVisualRefresh.css");
-   or add the URL to Online themes in Vencord settings.
+   or add ONE OF the URL to Online themes in Vencord settings.
    If you want to modify the contents, either copy this entire file to QuickCSS, 
    or fork this repository and change the import link to yours.
 
-   Be sure to give it a read first so you know what's gonna happen. */
+   Be sure to give it a read first so you know what's gonna happen.
 */
 
 /* Neccesary imports (MUST BE BEFORE ANY CSS CODE) */
