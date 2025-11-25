@@ -1,4 +1,4 @@
-/* BETTER VISUAL REFRESH - Custom Title Bar edition - by Yae Mica.
+/* BETTER VISUAL REFRESH by Yae Mica.
    Restores the layout of the old UI to most areas of the new "Visual Refresh" UI without 
    breaking stuffs.
 
@@ -6,20 +6,28 @@
    Feel free to adjust to your liking. 
 
    Usage: Add the following line to THE TOP your QuickCSS 
-   @import url("https://raw.githubusercontent.com/YMica-OSE/BetterVisualRefresh/refs/heads/main/BVR-CustomTitleBar.css");
+   @import url("https://raw.githubusercontent.com/YMica-OSE/BetterVisualRefresh/refs/heads/main/BetterVisualRefresh.css");
    or add the URL to Online themes in Vencord settings.
    If you want to modify the contents, either copy this entire file to QuickCSS, 
    or fork this repository and change the import link to yours.
 
    Be sure to give it a read first so you know what's gonna happen. */
-   
+*/
+
 /* Neccesary imports (MUST BE BEFORE ANY CSS CODE) */
-@import url("https://raw.githubusercontent.com/YMica-OSE/BetterVisualRefresh/refs/heads/main/BVR-Core.css");
+@import url("https://scattagain.github.io/VencordStuff/css/GuildbarRevert.css");
 
-/* ========== AREA: TOP BARS (CTB specific) ========== */
+/* ========== AREA: SERVER LIST BAR ========== */
 
-/* Top bar redesign [julienraptor01] 
-   Special thanks to Klee for finding this */
+/* Revert guild icons look (1st import) [scattagain] */
+/* Also remove the web download button while at it [me] */
+div[class^="listItem"]:has([data-list-item-id="guildsnav___app-download-button"]) {
+	display: none !important;
+}
+
+/* ========== AREA: TOP BARS ========== */
+
+/* Titlebar shrink [julienraptor01] */
 :root {
 	--custom-app-top-bar-height: 22px /* Define the height of the top bar */
 }
@@ -42,9 +50,9 @@
 		z-index: 10240;
 		gap: unset; /* Make sure there is no space in between the buttons and window buttons */
 		> [class^=recentsIcon] {
-			&:hover {
-				background-color: var(--background-modifier-hover); /* Make the notification button have a correct hover effect */
-				color: var(--interactive-hover); /* Make the notification button have a correct hover effect */
+			&:hover { /* Make the notification button have a correct hover effect */
+				background-color: var(--background-modifier-hover); 
+				color: var(--interactive-hover);
 			}
 			> [class^=button] {
 				height: 16px;
@@ -83,3 +91,60 @@
 		}
 	}
 }
+
+
+/* Make search box shorter unfocused [me, taken from KrstlSkll69] */
+.search__97492:not(.open__97492)>.searchBar__97492 {
+	width: 84px;
+}
+
+/* ========== AREA: RIGHT PANEL ========== */
+
+/* Make member list more compressed 
+   (I can't find the source of this as many people have this in their snippets without credits) */
+[class^=membersWrap] {
+	min-width: unset;
+	> [class^=members] {
+		width: 240px;
+		[class^=membersGroup] { /* Paddings for role names */
+			padding: 22px 0px 0 14px;
+			height: 40px;
+		}
+		[class^=member] > [class^=childContainer] { /* Paddings for list items */
+			padding: 0px;
+		}
+	}
+}
+
+/* ========== AREA: BOTTOM BARS ========== */
+
+/* Remove Gift button [me] 
+   (the label might change if you use another language)  */
+[class^=buttons] {
+	[aria-label="Send a gift"] {
+		display: none;
+	}
+	[class^=spacer] {
+		display: none;
+	}
+}
+
+/* ========== EXTRA TWEAKS ========== */
+
+/* Compact context menu [.abbie] 
+   Taken from https://abbie.github.io/discord-css/import.css */
+div[class*="clickTrapContainer"] div[role="menu"] :is([id*="message-quickreact"], [id*="message-actions-quickreact"]) {
+	display: none;
+}
+div[class*="clickTrapContainer"] div[role="menu"] {
+	div[role="group"] {
+		padding: 0;
+	}
+	div:is([role="menuitem"],[role="menuitemcheckbox"]), div[class*="hideInteraction_"] {
+		padding: 4px;
+		&:not([class*="colorDanger_"], :hover) div[class*="label_"] {
+			color: var(--interactive-normal);
+		}
+	}
+}
+
