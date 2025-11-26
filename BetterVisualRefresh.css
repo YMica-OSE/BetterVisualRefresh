@@ -17,6 +17,8 @@
 
 /* Neccesary imports (MUST BE BEFORE ANY CSS CODE) */
 @import url("https://scattagain.github.io/VencordStuff/css/GuildbarRevert.css");
+@import url("https://raw.githubusercontent.com/Krammeth/css-snippets/refs/heads/main/CompactButtons.css");
+@import url("https://raw.githubusercontent.com/yiruzu/vencord-snippets/refs/heads/main/snippets/UserActivityRedesign/import.css");
 
 /* ========== AREA: SERVER LIST BAR ========== */
 
@@ -28,6 +30,7 @@ div[class^="listItem"]:has([data-list-item-id="guildsnav___app-download-button"]
 
 /* ========== AREA: TOP BARS ========== */
 
+/* Compact top button in DM list (2nd import) [krammeth] */
 /* Titlebar shrink [julienraptor01] */
 :root {
 	--custom-app-top-bar-height: 22px /* Define the height of the top bar */
@@ -42,6 +45,12 @@ div[class^="listItem"]:has([data-list-item-id="guildsnav___app-download-button"]
 			left: calc(var(--space-sm) - 3px);
 			top: 1px;
 			z-index: 10240;
+		}
+		> [class^=winButtons] {
+			gap: unset; 
+			> [class^=winButton] {
+				width: 28px; 
+			}
 		}
 	}
 }
@@ -95,20 +104,19 @@ div[class^="listItem"]:has([data-list-item-id="guildsnav___app-download-button"]
 		> [class^=clickable] {
 			width: 16px;
 		}
-		> [class^=winButtons] {
-			gap: unset; 
-			> [class^=winButton] {
-				width: 28px; 
-			}
-		}
 	}
 }
 
-
-/* Make search box shorter unfocused [me, taken from KrstlSkll69] */
+/* Make search box shorter when unfocused [me, taken from KrstlSkll69] */
 .search__97492:not(.open__97492)>.searchBar__97492 {
-	width: 84px;
+	width: 88px;
+	.public-DraftEditorPlaceholder-inner {
+		padding-right: 8px;
+	}
 }
+
+/* Hide the arrow button next to server name [me] */
+[class*="headerChildren"] { display: none !important; }
 
 /* ========== AREA: RIGHT PANEL ========== */
 
@@ -143,6 +151,7 @@ div[class^="listItem"]:has([data-list-item-id="guildsnav___app-download-button"]
 
 /* ========== EXTRA TWEAKS ========== */
 
+/* Redesigned user area (3rd import) [yiruzu] */
 /* Compact context menu [.abbie] 
    Taken from https://abbie.github.io/discord-css/import.css */
 div[class*="clickTrapContainer"] div[role="menu"] :is([id*="message-quickreact"], [id*="message-actions-quickreact"]) {
@@ -159,4 +168,3 @@ div[class*="clickTrapContainer"] div[role="menu"] {
 		}
 	}
 }
-
