@@ -7,7 +7,7 @@
 
    Usage: Add ONE OF the following line to THE TOP your QuickCSS 
    @import url("https://raw.githubusercontent.com/YMica-OSE/BetterVisualRefresh/refs/heads/main/BetterVisualRefresh.css");
-   @import url("https://gitlab.com/sakura.osesoft/BetterVisualRefresh/-/raw/main/BetterVisualRefresh.css");
+   @import url("https://gitlab.com/api/v4/projects/sakura.osesoft%2FBetterVisualRefresh/repository/files/BetterVisualRefresh.css/raw");
    or add ONE OF the URL to Online themes in Vencord settings.
    If you want to modify the contents, either copy this entire file to QuickCSS, 
    or fork this repository and change the import link to yours.
@@ -18,7 +18,6 @@
 /* Neccesary imports (MUST BE BEFORE ANY CSS CODE) */
 @import url("https://scattagain.github.io/VencordStuff/css/GuildbarRevert.css");
 @import url("https://raw.githubusercontent.com/Krammeth/css-snippets/refs/heads/main/CompactButtons.css");
-@import url("https://raw.githubusercontent.com/yiruzu/vencord-snippets/refs/heads/main/snippets/UserActivityRedesign/import.css");
 
 /* ========== AREA: SERVER LIST BAR ========== */
 
@@ -151,7 +150,6 @@ div[class^="listItem"]:has([data-list-item-id="guildsnav___app-download-button"]
 
 /* ========== EXTRA TWEAKS ========== */
 
-/* Redesigned user area (3rd import) [yiruzu] */
 /* Compact context menu [.abbie] 
    Taken from https://abbie.github.io/discord-css/import.css */
 div[class*="clickTrapContainer"] div[role="menu"] :is([id*="message-quickreact"], [id*="message-actions-quickreact"]) {
