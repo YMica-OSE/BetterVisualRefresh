@@ -168,6 +168,8 @@ div[class^="clickTrapContainer"] div[role="menu"] {
 }
 /* Transparent loading screen */
 div[class*="fixClipping"] {
+	top: var(--custom-app-top-bar-height);
+	padding-bottom: var(--custom-app-top-bar-height);
 	background: 0 0;
 	backdrop-filter: blur(5px);
 }
