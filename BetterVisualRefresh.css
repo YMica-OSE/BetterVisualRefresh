@@ -48,7 +48,9 @@ div[class^="listItem"]:has([data-list-item-id="guildsnav___app-download-button"]
 		padding-top: 8px !important;
 	}
 }
+[class*=systemBar] { display: none; }
 [class^=bar] {
+	z-index: 33550336;
 	padding: unset;
 	> [class^=title] {
 		/* Remove redundant server name in the middle of the titlebar */
@@ -166,10 +168,12 @@ div[class^="clickTrapContainer"] div[role="menu"] {
 		}
 	}
 }
-/* Transparent loading screen */
+
+/* Transparent loading screen [computing_cat] */
 div[class*="fixClipping"] {
-	top: var(--custom-app-top-bar-height) !important;
-	padding-bottom: var(--custom-app-top-bar-height) !important;
 	background: 0 0;
 	backdrop-filter: blur(5px);
 }
+
+/* Prevent full screen menus from hiding the titlebar [nvhhr] */
+[class*=baseLayer_] { opacity: 1 !important; }
