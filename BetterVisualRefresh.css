@@ -168,7 +168,6 @@ div[class^="clickTrapContainer"] div[role="menu"] {
 }
 /* Transparent loading screen */
 div[class*="fixClipping"] {
-	z-index: 0;
 	background: 0 0;
 	backdrop-filter: blur(5px);
 }
