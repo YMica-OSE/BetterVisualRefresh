@@ -44,7 +44,7 @@ div[class^="listItem"]:has([data-list-item-id="guildsnav___app-download-button"]
 			left: calc(var(--space-sm) - 3px);
 			top: 1px;
 		}
-		> [class^=backForwardButtons] { padding-left: 58px; }
+		[class^=backForwardButtons] { padding-left: 58px; }
 	}
 }
 .platform-osx {
@@ -53,6 +53,8 @@ div[class^="listItem"]:has([data-list-item-id="guildsnav___app-download-button"]
 	}
 }
 [class^=bar] {
+	z-index: 33550336;
+	padding: unset;
 	> [class^=title] {
 		/* remove redundant titles */
 		> [class^=title] {
@@ -75,7 +77,7 @@ div[class^="listItem"]:has([data-list-item-id="guildsnav___app-download-button"]
 			display: none; /* Discord, we don't need your useless help page... */
 		}
 		> [class^=button] {
-			height: 16px;
+			height: 14px;
 			width: 16px;
 			padding: 6px;
 			&:hover /* Make the buttons have a correct hover effect */
@@ -85,7 +87,7 @@ div[class^="listItem"]:has([data-list-item-id="guildsnav___app-download-button"]
 			}
 		}
 		> [class^=vc-toolbox-btn] {
-			height: 16px;
+			height: 14px;
 			width: 16px;
 			padding: 6px;
 			&:hover {
@@ -94,7 +96,7 @@ div[class^="listItem"]:has([data-list-item-id="guildsnav___app-download-button"]
 			}
 		}
 		> [class^=clickable] {
-			width: 16px;
+			height: 14px;
 			width: 16px;
 			padding: 6px;
 			margin: 0px;
@@ -106,6 +108,9 @@ div[class^="listItem"]:has([data-list-item-id="guildsnav___app-download-button"]
 		}
 	}
 }
+:has([class*="scrim"]) {
+	[class*=backForwardButtons] { display: none; }
+}
 
 /* Make search box shorter when unfocused [me, taken from KrstlSkll69] */
 .search__97492:not(.open__97492)>.searchBar__97492 {
@@ -116,7 +121,7 @@ div[class^="listItem"]:has([data-list-item-id="guildsnav___app-download-button"]
 }
 
 /* Hide the arrow button next to server name [me] */
-[class*="headerChildren"] { display: none !important; }
+[class^="headerChildren"] { display: none !important; }
 
 /* ========== AREA: RIGHT PANEL ========== */
 
@@ -158,16 +163,16 @@ div[class^="listItem"]:has([data-list-item-id="guildsnav___app-download-button"]
 
 /* Compact context menu [.abbie] 
    Taken from https://abbie.github.io/discord-css/import.css */
-div[class*="clickTrapContainer"] div[role="menu"] :is([id*="message-quickreact"], [id*="message-actions-quickreact"]) {
+div[class^="clickTrapContainer"] div[role="menu"] :is([id*="message-quickreact"], [id*="message-actions-quickreact"]) {
 	display: none;
 }
-div[class*="clickTrapContainer"] div[role="menu"] {
+div[class^="clickTrapContainer"] div[role="menu"] {
 	div[role="group"] {
 		padding: 0;
 	}
-	div:is([role="menuitem"],[role="menuitemcheckbox"]), div[class*="hideInteraction_"] {
+	div:is([role="menuitem"],[role="menuitemcheckbox"]), div[class^="hideInteraction_"] {
 		padding: 4px;
-		&:not([class*="colorDanger_"], :hover) div[class*="label_"] {
+		&:not([class^="colorDanger_"], :hover) div[class^="label_"] {
 			color: var(--interactive-normal);
 		}
 	}
