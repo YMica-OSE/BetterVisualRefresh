@@ -108,8 +108,26 @@ div[class^="listItem"]:has([data-list-item-id="guildsnav___app-download-button"]
 		}
 	}
 }
-:has([class*="scrim"]) {
-	[class*=backForwardButtons] { display: none; }
+
+/* Since we are forcing the top bar to be always on top, some buttons that doesn't work
+   in overlay UIs are also shown. We hide them manually here */
+:has([class^="scrim"]) {
+	[class^=backForwardButtons] { display: none; }
+	[class^=trailing] {
+		[aria-label="Checkpoint"] {
+			display: none;
+		}
+	}
+}
+
+/* Hide stuffs in the Checkpoint UI. Remove this after January 16th, 2026 */
+:has(.root__5c9fc) {
+	[class^=backForwardButtons] { display: none; }
+	[class^=trailing] {
+		[aria-label="Checkpoint"] {
+			display: none;
+		}
+	}
 }
 
 /* Make search box shorter when unfocused [me, taken from KrstlSkll69] */
