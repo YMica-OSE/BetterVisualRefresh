@@ -166,6 +166,9 @@ div[class^="clickTrapContainer"] div[role="menu"] {
 		}
 	}
 }
-.container_a2f514 {
+/* Transparent loading screen */
+.container_e40c16 .fixClipping_c7e9c6  {
 	z-index: 0;
+	background: 0 0;
+	backdrop-filter: blur(5px);
 }
