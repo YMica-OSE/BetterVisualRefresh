@@ -26,6 +26,11 @@
 div[class*="listItem"]:has([data-list-item-id="guildsnav___app-download-button"]) {
 	display: none !important;
 }
+/* Temporary unread badge fix */
+[class$="lowerBadge"] {
+	left: 32px;
+	top: 32px;
+}
 
 /* ========== AREA: TOP BARS ========== */
 
