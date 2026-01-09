@@ -83,7 +83,7 @@ div[class*="listItem"]:has([data-list-item-id="guildsnav___app-download-button"]
 			&:hover /* Make the buttons have a correct hover effect */
 			{
 				background-color: var(--background-modifier-hover); 
-				color: var(--interactive-hover); 
+				/* color: var(--interactive-hover);  */
 			}
 		}
 		> [class*=vc-toolbox-btn] {
@@ -109,12 +109,30 @@ div[class*="listItem"]:has([data-list-item-id="guildsnav___app-download-button"]
 	}
 }
 
-/* Make search box shorter when unfocused [me, taken from KrstlSkll69] */
-._974928fe84ca9647-search:not(._974928fe84ca9647-open)>._974928fe84ca9647-searchBar {
-	width: 88px;
-	.public-DraftEditorPlaceholder-inner {
-		padding-right: 8px;
-	}
+/* Make search box shorter when unfocused [theroxis] */
+[class$="-search"] > [class$="-searchBar"] {
+	width: 32px !important;
+	background: none;
+	border-color: transparent;
+	transition: background .25s ease,
+		width .25s ease,
+		border-color .25s ease;
+}
+
+[class$="-search"] > [class$="-searchBar"] .DraftEditor-root {
+	padding-right: 3px !important;
+}
+[class$="focused"] > [class$="-searchBar"],
+[class$="open"] > [class$="-searchBar"] {
+	width: 244px !important;
+	background: var(--background-gradient-low, var(--input-background-default));
+	border-color: var(--input-border-default);
+}
+[class$="-search"] > [class$="-searchBar"] [class$="iconLayout"] {
+	margin-right: 7px;
+}
+[class$="-search"] {
+	margin: 0 !important;
 }
 
 /* Hide the arrow button and invite button next to server name [me] */
@@ -129,8 +147,7 @@ div[class*="inviteButton"] { display: none !important; }
 	min-width: unset;
 	> [class*=members] {
 		width: 240px;
-		[class*=membersGroup] { /* Paddings for role names */
-			padding: 22px 0px 0 14px;
+		[class*=membersGroup] { /* Fix for role names */
 			height: 40px;
 		}
 		[class*=member] > [class*=childContainer] { /* Paddings for list items */
