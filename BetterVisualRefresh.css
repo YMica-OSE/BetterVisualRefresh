@@ -16,7 +16,7 @@
 */
 
 /* Neccesary imports (MUST BE BEFORE ANY CSS CODE) */
-@import url("https://scattagain.github.io/VencordStuff/css/GuildbarRevert.css");
+@import url("https://raw.githubusercontent.com/YMica-OSE/BetterVisualRefresh/refs/heads/main/GuildbarRevert.css");
 @import url("https://raw.githubusercontent.com/Krammeth/css-snippets/refs/heads/main/CompactButtons.css");
 
 /* ========== AREA: SERVER LIST BAR ========== */
