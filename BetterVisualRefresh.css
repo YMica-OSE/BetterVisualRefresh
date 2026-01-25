@@ -115,7 +115,7 @@ div[class*="listItem"]:has([data-list-item-id="guildsnav___app-download-button"]
 	padding-right: 3px !important;
 }
 [class*="focused"] > [class*="searchBar"],
-[class*="open"] > [class$="searchBar"] {
+[class*="open"] > [class*="searchBar"] {
 	width: 244px !important;
 	background: var(--background-gradient-low, var(--input-background-default));
 	border-color: var(--input-border-default);
@@ -123,7 +123,7 @@ div[class*="listItem"]:has([data-list-item-id="guildsnav___app-download-button"]
 [class*="search"] > [class*="searchBar"] [class*="iconLayout"] {
 	margin-right: 7px;
 }
-[class*="search"] {
+[class^="search_"] {
 	margin: 0 !important;
 }
 /* Hide the arrow button and invite button next to server name [me] */
