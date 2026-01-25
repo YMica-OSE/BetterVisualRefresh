@@ -16,7 +16,7 @@
 */
 
 /* Neccesary imports (MUST BE BEFORE ANY CSS CODE) */
-@import url("https://raw.githubusercontent.com/YMica-OSE/BetterVisualRefresh/refs/heads/main/GuildBarRevert.css");
+@import url("https://raw.githubusercontent.com/scattagain/VencordStuff/4fa465629d6d71092c20aa11245abb6ad4a44641/css/GuildbarRevert.css");
 @import url("https://raw.githubusercontent.com/Krammeth/css-snippets/refs/heads/main/CompactButtons.css");
 
 /* ========== AREA: SERVER LIST BAR ========== */
@@ -44,7 +44,7 @@ div[class*="listItem"]:has([data-list-item-id="guildsnav___app-download-button"]
 	}
 }
 .platform-osx {
-	[class$=itemsContainer] {
+	[class*=itemsContainer] {
 		padding-top: 8px !important;
 	}
 }
@@ -78,7 +78,6 @@ div[class*="listItem"]:has([data-list-item-id="guildsnav___app-download-button"]
 			&:hover /* Make the buttons have a correct hover effect */
 			{
 				background-color: var(--background-modifier-hover); 
-				/* color: var(--interactive-hover);  */
 			}
 		}
 		> [class*=vc-toolbox-btn] {
@@ -87,7 +86,6 @@ div[class*="listItem"]:has([data-list-item-id="guildsnav___app-download-button"]
 			padding: 6px;
 			&:hover {
 				background-color: var(--background-modifier-hover); 
-				color: var(--interactive-hover);
 			}
 		}
 		> [class*=clickable] {
@@ -97,8 +95,7 @@ div[class*="listItem"]:has([data-list-item-id="guildsnav___app-download-button"]
 			margin: 0px;
 			&:hover
 			{
-				background-color: var(--background-modifier-hover); 
-				color: var(--interactive-hover); 
+				background-color: var(--background-modifier-hover);
 			}
 		}
 	}
@@ -130,7 +127,7 @@ div[class*="listItem"]:has([data-list-item-id="guildsnav___app-download-button"]
 	margin: 0 !important;
 }
 /* Hide the arrow button and invite button next to server name [me] */
-div[class$="headerChildren"] { display: none !important; }
+div[class*="headerChildren"] { display: none !important; }
 div[class*="inviteButton"] { display: none !important; }
 
 /* ========== AREA: RIGHT PANEL ========== */
@@ -163,6 +160,16 @@ div[class*="inviteButton"] { display: none !important; }
 	}
 	[class*=spacer] {
 		display: none;
+	}
+}
+/* Hide excess arrow buttons next to voice control buttons [fazzi]
+  (can always access them with right click) */
+div[class*=micButtonParent] {
+	button[role="switch"] {
+		border-radius: var(--radius-sm) !important;
+		~ button {
+			display: none;
+		}
 	}
 }
 
