@@ -1,5 +1,5 @@
 /* BETTER VISUAL REFRESH by Yae Mica.
-   Mandatory Dependency: GuildbarRevert by Scatt
+   Mandatory Dependency: GuildbarRevert by Amelia
    Forked from https://scattagain.github.io/VencordStuff/css/GuildbarRevert.css
 */
 
@@ -85,10 +85,14 @@ nav[class*="guilds_"] {
 			use[href$="-upper_badge_masks"] {
 				translate: var(--badge-offset);
 			}
+
+			use[href$="-blob_mask"] {
+				scale: calc(var(--blob-scale) / 40);
+			}
 		}
 
 		use[href$="-blob_mask"] {
-			scale: calc(var(--blob-scale) / 40);
+			scale: var(1.2);
 		}
 	}
 
