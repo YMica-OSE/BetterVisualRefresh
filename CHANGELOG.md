@@ -1,4 +1,9 @@
 # BVR update history 
+- `20260208-1159`: Happy New Year! A LOT has happened since the last time I updated the changelog. Here's what went down:
+  - On Dec. 17th, Discord updated their class names from `className__gIbBErISh` to `_gIbBErISh-className`, breaking a ton of themes. Thanks to having switched from hardcoded class names to class selectors (`[class=*className]`) a month prior, there was very little I had to change.
+  - Then new year came, and about 3 weeks after, the change was reverted. Again, only minor fixes had to be made.
+  - During this timespan, there were some other visual adjustments: The loading (spinning Discord logo) screen is now a blur overlay on top of the app itself, and the chat search bar is now back to being an icon.
+  - What also got updated was Chromium. Version 144 (which became the base for Electron 40) changed how some CSS class functions. As such on web and Vesktop, the whole server bar appeared invisible (although still functional). The developer of the snippet I used provided several versions that seemed to resolved this issue. However, they didn't uploaded some of it to their repositories, so I had to upload it here in order to import.
 - `20251125-1135`: I have decided to no longer maintain the `NativeTitleBar` variant of the theme due to an extensive amount of changes on Discord's side, plus a major slowdown caused by some snippets and workaround used to achieve the look. Starting from this commit, the `CustomTitleBar` becomes the sole variant of this theme (and yes, you'll have to change your import URL once again). For now this will look broken on macOS, but should be fine otherwise - I will try to adapt changes to this platform later on.
 - `20250717-0334`: Two changes:
   - Adapted the unfocused search box to a shorter box instead of an icon now that Discord broke the icon itself.
