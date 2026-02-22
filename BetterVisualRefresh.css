@@ -164,7 +164,7 @@ div[class*="inviteButton"] { display: none !important; }
 }
 /* Hide excess arrow buttons next to voice control buttons [fazzi]
   (can always access them with right click) */
-div[class*=micButtonParent] {
+div[class*=audioButtonParent] {
 	button[role="switch"] {
 		border-radius: var(--radius-sm) !important;
 		~ button {
