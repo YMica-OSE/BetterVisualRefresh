@@ -1,0 +1,64 @@
+/* BETTER VISUAL REFRESH - Transparent UI by Yae Mica.
+   An addon theme for Windows clients with transparency enabled, mostly respecting whatever
+   material is at the bottom of the window.
+
+   Usage: Add ONE OF the following line to THE TOP your QuickCSS 
+   @import url("https://raw.githubusercontent.com/YMica-OSE/BetterVisualRefresh/refs/heads/main/TransparentUI.css");
+   @import url("https://gitlab.com/api/v4/projects/sakura.osesoft%2FBetterVisualRefresh/repository/files/TransparentUI.css/raw");
+   or add ONE OF the URL to Online themes in Vencord settings.
+   You MUST have either the default "Ash" or "Dark" themes set ("Light" and "Onyx" may cause readability issues, and
+   Nitro themes creates a weird setup that disables most of the transparency effects). For official clients with Vencord,
+   you do not need "Enable window transparency" turned on, just selecting "Background Material" is enough.
+
+   Be sure to give the code a read first so you know what's gonna happen.
+*/
+
+.platform-win {
+	div {
+		--channels-default: rgba(172,172,172,1) !important;
+	}
+	body {
+		background-color: rgba(0,0,0,0.4) !important;
+	}
+	[class*="appMount"] {
+		background: var(--app-bg) !important;
+		background-repeat: no-repeat !important;
+		background-position: center !important;
+		background-size: cover !important;
+	}
+	[class*="app_"], [class*="bg_"], [class*="guilds"], [class*="sidebar"]:after, 
+	[class*="sidebarList"] > [class*="container"], 
+	[class*="privateChannels"], [class*="chatContent"], [class*="themed"], 
+	[class*="privateChannels"] > [class*="scrollerBase"], 
+	[class*="chat"] > [class*="content"] > [class*="container"],
+	[class*="membersWrap"] > [class*="members"],
+	[class*="content"] > [class*="member"],
+	[class*="scrollerInner"] > [class*="wrapper"], 
+	[class*="scrollerInner"] > [class*="wrapper"] > [class*="cozy"],
+	[data-list-item-id*="chat-messages___divider"] > [class*="content"],
+	[class*="stackedBars"] {
+		background-color: transparent !important;
+	}
+	[class*="page"] > div > [class*="chat"] {
+		background-color: rgba(0,0,0,0.4) !important;
+	}
+	[class*="channelTextArea"], [class*="embedFull"], 
+	[class*="chatContent"] > [class*="form"] > [class*="wrapper"], 
+	[class*="members"] > [role="list"] > div > [role="button"] > [class*="container"],
+	.vc-shiki-container {
+		background-color: rgba(64,64,64,0.4) !important;
+	}
+	[class*="upperContainer"] > [class*="children"]:after { 
+		display: none !important;
+	}
+	[class*="sidebarList"] >  [class*="container"] > [class*="scroller"] {
+		clip-path: inset(0 0 12px 0) !important;
+	}
+	[class*="messagesWrapper"] > [class*="scroller"] {
+		clip-path: inset(0 0 16px 0) !important;
+		mask: none !important;
+	}
+	[class*="sidebar"] > [class*="panels"] {
+		background-color: rgba(64,64,64,0.4) !important;
+	}
+}
