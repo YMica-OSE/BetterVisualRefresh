@@ -1,5 +1,5 @@
 /* BETTER VISUAL REFRESH - Transparent UI by Yae Mica.
-   An addon theme for Windows clients with transparency enabled, mostly respecting whatever
+   A color theme for Windows clients with transparency enabled, mostly respecting whatever
    material is at the bottom of the window.
 
    Usage: Add ONE OF the following line to THE TOP your QuickCSS 
@@ -14,39 +14,66 @@
 */
 
 .platform-win {
+	/* Set the default gray text to a constant, ensuring visibilty regardless of base theme */
 	div {
 		--channels-default: rgba(172,172,172,1) !important;
 	}
+	/* Set transparency for the base background layer */
 	body {
-		background-color: rgba(0,0,0,0.4) !important;
+		background-color: rgba(0,0,0,0.35) !important;
 	}
+
+	/* Undecorate most of the background layers across various elements */
 	[class*="appMount"] {
 		background: var(--app-bg) !important;
 		background-repeat: no-repeat !important;
 		background-position: center !important;
 		background-size: cover !important;
 	}
-	[class*="app_"], [class*="bg_"], [class*="guilds"], [class*="sidebar"]:after, 
-	[class*="sidebarList"] > [class*="container"], 
-	[class*="privateChannels"], [class*="chatContent"], [class*="themed"], 
-	[class*="privateChannels"] > [class*="scrollerBase"], 
-	[class*="chat"] > [class*="content"] > [class*="container"],
-	[class*="membersWrap"] > [class*="members"],
-	[class*="content"] > [class*="member"],
-	[class*="scrollerInner"] > [class*="wrapper"], 
+	[class*="app_"], [class*="bg_"], /* Extra background layers */
+	[class*="guilds"], [class*="sidebar"]:after, /* Servers bar */
+	[class*="homeWrapper"], [class*="shopHomeLink"], [class*="shopScroll"], /* Shop pages */
+	[class*="tabBar"] > [class*="item"], /* Tab buttons in Friends page */
+	[class*="content"] > [class*="member"], [class*="nowPlayingColumn"], /* Now playing in Friends page */
+	[class*="privateChannels"] > [class*="scrollerBase"], /* DM list (not the area, the list itself) */
+	[class*="privateChannelsHeaderContainer"], /* DM list breadcumbs */
+	[class*="channelTextArea"], /* Background beneath chat box */
+	[class*="chat"] > [class*="content"] > [class*="container"], /* The rest from here I forgot what they are for */
+	[class*="scrollerInner"] > [class*="wrapper"],
 	[class*="scrollerInner"] > [class*="wrapper"] > [class*="cozy"],
 	[data-list-item-id*="chat-messages___divider"] > [class*="content"],
 	[class*="stackedBars"] {
 		background-color: transparent !important;
 	}
-	[class*="page"] > div > [class*="chat"] {
-		background-color: rgba(0,0,0,0.4) !important;
+
+	/* Make certain areas darker for contrast */ 
+	[class*="sidebarList"] > [class*="container"], /* Server channels list area */
+	[class*="sidebarList"] > [class*="privateChannels"] { /* DM lists area */
+		background-color: rgba(0,0,0,0.05) !important;
 	}
-	[class*="channelTextArea"], [class*="embedFull"], 
-	[class*="chatContent"] > [class*="form"] > [class*="wrapper"], 
-	[class*="members"] > [role="list"] > div > [role="button"] > [class*="container"],
+	[class*="base"] > [class*="content"] > [class*="page"] > [class*="container"], [class*="tabBody"], /* Background for most things in the DMs "server" */
+	[class*="page"] > [class*="container"] > [class*="scroller"],
+	[class*="shopViewWrapper"] > [class*="pageWrapper"] > [class*="page"], /* Shop inner pages */
+	[class*="homeWrapper"] > [class*="mainPageScroller"], 
+	[class*="page"] > div > [class*="chat"], /* Main chat area */
+	[class*="membersWrap"] > [class*="members"], /* Server members list */
+	[class*="chatContent"], [class*="themed"], [class*="applicationStore"], [class*="shop_"] {
+		background-color: rgba(0,0,0,0.35) !important;
+	}
+	/* Make certain areas slightly more gray also for contrast */
+	[class*="channelTextArea"] > [class*="scrollableContainer"], [class*="embedFull"], /* Embeds */
+	[class*="chatContent"] > [class*="form"] > [class*="wrapper"], /* Something in around the chat box area I forgot */
+	[class*="members"] > [role="list"] > div > [role="button"] > [class*="container"], /* User activity cards */
+	[class*="sidebar"] > [class*="panels"], /* User profile & Voice/Settings buttons area */
+	[class*="nowPlayingColumn"] > [class*="container"] > [class*="scroller"] > div > [class*="itemCard"], /* Now playing activity cards */
+	[class*="listItemContents"] > [class*="actions"] > [class*="actionButton"], /* Friends list action buttons */
 	.vc-shiki-container {
 		background-color: rgba(64,64,64,0.4) !important;
+	}
+
+	/* Fit and finishes to account for the transparent elements */
+	[class*="channelTextArea"] {
+		border-color: rgba(128,128,128,0.35) !important;
 	}
 	[class*="upperContainer"] > [class*="children"]:after,
 	[class*="chatGradient"] { 
@@ -55,10 +82,8 @@
 	[class*="sidebarList"] >  [class*="container"] > [class*="scroller"] {
 		clip-path: inset(0 0 12px 0) !important;
 	}
+	[class*="sidebarList"] > [class*="privateChannels"] > [class*="scroller"], 
 	[class*="messagesWrapper"] > [class*="scroller"] {
 		clip-path: inset(0 0 16px 0) !important;
-	}
-	[class*="sidebar"] > [class*="panels"] {
-		background-color: rgba(64,64,64,0.4) !important;
 	}
 }
