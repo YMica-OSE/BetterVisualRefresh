@@ -102,7 +102,7 @@ div[class*="listItem"]:has([data-list-item-id="guildsnav___app-download-button"]
 }
 
 /* Make search box shorter when unfocused [theroxis] */
-[class*="search"] {
+[class^="search_"] {
 	width: unset !important;
 }
 [class*="search"] > [class*="searchBar"] {

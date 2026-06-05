@@ -1,4 +1,5 @@
 # BVR update history 
+- `20260605-1908`: Another unfocused search box fix.
 - `20260604-1404`: Out of boredom, I decided to create a completely new theme that can be used standalone or as an addon to BVR. TransparentUI is here, allowing the window material underneath your client to shine through, letting you utilize mods like OpenGlass/DWMBlurGlass to their full potential. Currently this is only available on Windows, and requires the use of a non-nitro color theme.
 - `20260527-2243`: Fixed the unfocused search box being stuck in "expanded" position, creating a huge gap to its right.
 - `20260208-1159`: Happy New Year! A LOT has happened since the last time I updated the changelog. Here's what went down:
