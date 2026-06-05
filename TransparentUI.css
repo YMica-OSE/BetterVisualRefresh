@@ -41,16 +41,13 @@
 	[class*="chat"] > [class*="content"] > [class*="container"], /* The rest from here I forgot what they are for */
 	[class*="scrollerInner"] > [class*="wrapper"],
 	[class*="scrollerInner"] > [class*="wrapper"] > [class*="cozy"],
-	[data-list-item-id*="chat-messages___divider"] > [class*="content"],
-	[class*="stackedBars"] {
+	[data-list-item-id*="chat-messages___divider"] > [class*="content"] {
 		background-color: transparent !important;
 	}
 
 	/* Make certain areas darker for contrast */ 
 	[class*="sidebarList"] > [class*="container"], /* Server channels list area */
-	[class*="sidebarList"] > [class*="privateChannels"] { /* DM lists area */
-		background-color: rgba(0,0,0,0.05) !important;
-	}
+	[class*="sidebarList"] > [class*="privateChannels"], /* DM lists area */
 	[class*="base"] > [class*="content"] > [class*="page"] > [class*="container"], [class*="tabBody"], /* Background for most things in the DMs "server" */
 	[class*="page"] > [class*="container"] > [class*="scroller"],
 	[class*="shopViewWrapper"] > [class*="pageWrapper"] > [class*="page"], /* Shop inner pages */
@@ -67,11 +64,18 @@
 	[class*="sidebar"] > [class*="panels"], /* User profile & Voice/Settings buttons area */
 	[class*="nowPlayingColumn"] > [class*="container"] > [class*="scroller"] > div > [class*="itemCard"], /* Now playing activity cards */
 	[class*="listItemContents"] > [class*="actions"] > [class*="actionButton"], /* Friends list action buttons */
+	[class*="stackedBars"], /* Reply bar atop the chat box */
 	.vc-shiki-container {
 		background-color: rgba(64,64,64,0.4) !important;
 	}
 
 	/* Fit and finishes to account for the transparent elements */
+	[class*="codeContainer"] > [class*="scrollbarGhostHairline"] {
+		background: rgba(64,64,64,0.4) !important;
+	}
+	[class*="sidebarList"] {
+		backdrop-filter: none !important;
+	}
 	[class*="channelTextArea"] {
 		border-color: rgba(128,128,128,0.35) !important;
 	}
