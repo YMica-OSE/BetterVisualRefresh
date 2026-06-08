@@ -13,7 +13,7 @@
    Be sure to give the code a read first so you know what's gonna happen.
 */
 
-.platform-win {
+.platform-win:not(.custom-theme-background) {
 	/* Set the default gray text to a constant, ensuring visibilty regardless of base theme */
 	div {
 		--channels-default: rgba(172,172,172,1) !important;

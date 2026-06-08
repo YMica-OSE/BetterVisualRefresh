@@ -104,6 +104,7 @@ div[class*="listItem"]:has([data-list-item-id="guildsnav___app-download-button"]
 /* Make search box shorter when unfocused [theroxis] */
 [class^="search_"] {
 	width: unset !important;
+	margin: 0 !important;
 }
 [class*="search"] > [class*="searchBar"] {
 	width: 32px !important;
@@ -125,9 +126,6 @@ div[class*="listItem"]:has([data-list-item-id="guildsnav___app-download-button"]
 }
 [class*="search"] > [class*="searchBar"] [class*="iconLayout"] {
 	margin-right: 7px;
-}
-[class^="search_"] {
-	margin: 0 !important;
 }
 /* Hide the arrow button and invite button next to server name [me] */
 div[class*="headerChildren"] { display: none !important; }
