@@ -90,4 +90,7 @@
 	[class*="messagesWrapper"] > [class*="scroller"] {
 		clip-path: inset(0 0 16px 0) !important;
 	}
+	[class*="messagesWrapper"]:has([class*="chatTypingGradientNotAtBottom"]) > [class*="scroller"] {
+		mask: linear-gradient(180deg,#000,transparent 43px,transparent) bottom /100% 60px no-repeat,linear-gradient(#000,#000) top /100% calc(100% - 59px) no-repeat;
+	}
 }
