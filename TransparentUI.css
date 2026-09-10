@@ -47,7 +47,7 @@
 	[class*="privateChannelsHeaderContainer"], /* DM list breadcumbs */
 	[class*="channelTextArea"], /* Background beneath chat box */
 	[class*="activityPanel"], /* VC screenshare bar */
-	[class*="scrollerInner"][data-list-id="chat-messages"] > [class*="container"], /* Thread post channel reaction bar */
+	[class*="scrollerInner"][data-list-id="chat-messages"] > [class*="container"], /* Thread post channel reaction bar (at the start) */
 	[class*="chat"] > [class*="content"] > [class*="container"], /* The rest from here I forgot what they are for */
 	[class*="scrollerInner"] > [class*="wrapper"],
 	[class*="scrollerInner"] > [class*="wrapper"] > [class*="cozy"],
@@ -70,8 +70,12 @@
 	[class*="searchResultsWrap"], [class*="searchResult_"], /* Search result pane and its result boxes */
 	[class*="card"] > [class*="mainCard"], /* Thread page post items */
 	[class*="scrollerInner"][data-list-id="chat-messages"] > div > [class*="iconWrapper"], /* Thread post channel title icon */
+	[class*="scrollerContent"] > [class*="header"], /* Thread post channel reaction bar (when scrolled down) */
 	[class*="chatContent"], [class*="themed"], [class*="applicationStore"], [class*="shop_"] {
 		background-color: rgba(0,0,0,0.25) !important;
+	}
+	[class*="chatLayerWrapper"]:has([class*="resizeHandle"]) > [class*="container"] { /* VC chat side panel itself */
+		background: none !important;
 	}
 	/* Make certain areas slightly more gray also for contrast */
 	[class*="channelTextArea"] > [class*="scrollableContainer"], [class*="embedFull"], /* Embeds */
