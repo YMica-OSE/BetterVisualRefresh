@@ -37,7 +37,7 @@
 	[class*="app_"], [class*="bg_"], /* Extra background layers */
 	[class*="guilds"], [class*="sidebar"]:after, /* Servers bar */
 	[class*="homeWrapper"], [class*="shopHomeLink"], [class*="shopScroll"], /* Shop pages */
-	[class*="callContainer"] > [class*="root"], /* VC page */
+	[class*="callContainer"], [class*="callContainer"] > [class*="root"], /* VC page */
 	[class*="channelChatWrapper"], /* VC chat side panel background */
 	[class*="tabBar"] > [class*="item"], /* Tab buttons in Friends page */
 	[class*="content"] > [class*="member"], [class*="nowPlayingColumn"], /* Now playing in Friends page */
@@ -47,6 +47,7 @@
 	[class*="privateChannelsHeaderContainer"], /* DM list breadcumbs */
 	[class*="channelTextArea"], /* Background beneath chat box */
 	[class*="activityPanel"], /* VC screenshare bar */
+	[class*="scrollerInner"][data-list-id="chat-messages"] > [class*="container"], /* Thread post channel reaction bar */
 	[class*="chat"] > [class*="content"] > [class*="container"], /* The rest from here I forgot what they are for */
 	[class*="scrollerInner"] > [class*="wrapper"],
 	[class*="scrollerInner"] > [class*="wrapper"] > [class*="cozy"],
@@ -67,6 +68,8 @@
 	[class*="page"] > div > [class*="chat"], /* Main chat area */
 	[class*="membersWrap"] > [class*="members"], /* Server members list */
 	[class*="searchResultsWrap"], [class*="searchResult_"], /* Search result pane and its result boxes */
+	[class*="card"] > [class*="mainCard"], /* Thread page post items */
+	[class*="scrollerInner"][data-list-id="chat-messages"] > div > [class*="iconWrapper"], /* Thread post channel title icon */
 	[class*="chatContent"], [class*="themed"], [class*="applicationStore"], [class*="shop_"] {
 		background-color: rgba(0,0,0,0.25) !important;
 	}
