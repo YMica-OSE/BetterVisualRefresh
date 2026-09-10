@@ -102,6 +102,7 @@
 	[class*="upperContainer"] > [class*="children"]:after, [class*="chatGradient"],
 	[class*="callContainer"] > [class*="root"] > div > [class*="container"] > [class*="pulseGradient"],
 	[class*="callContainer"] > [class*="root"] > div > [class*="container"] > div > [class*="gradientBackground"],
+	[class*="callContainer"] > [class*="root"] > div > [class*="container"] > svg,
 	[class*="videoControls"] > [class*="gradientTop"], [class*="videoControls"] > [class*="gradientBottom"] {
 		display: none !important;
 	}
