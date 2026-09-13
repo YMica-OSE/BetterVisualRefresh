@@ -71,6 +71,10 @@
 	[class*="card"] > [class*="mainCard"], /* Thread page post items */
 	[class*="scrollerInner"][data-list-id="chat-messages"] > div > [class*="iconWrapper"], /* Thread post channel title icon */
 	[class*="scrollerContent"] > [class*="header"], /* Thread post channel reaction bar (when scrolled down) */
+	[class*="content"] > [class*="thin"], /* Spoiler and NSFW channels PSA page */
+	[class*="page"] > [class*="container"] > [class*="themed"], /* Top bar of Friends page */
+	[class*="subtitleContainer"] > [class*="themed"], /* Top bar server chat channel */
+	[class*="shop"] > div > [class*="themed"], /* Top bar of Shop page */
 	[class*="chatContent"], [class*="themed"], [class*="applicationStore"], [class*="shop_"] {
 		background-color: rgba(0,0,0,0.25) !important;
 	}
@@ -84,14 +88,26 @@
 	[class*="nowPlayingColumn"] > [class*="container"] > [class*="scroller"] > div > [class*="itemCard"], /* Now playing activity cards */
 	[class*="listItemContents"] > [class*="actions"] > [class*="actionButton"], /* Friends list action buttons */
 	[class*="stackedBars"], /* Reply bar atop the chat box */
+	[class*="container"][class*="usesCardRows"], /* User activity cards */
+	[class*="codeContainer"] > [class*="scrollbarGhostHairline"], /* Codeblocks */ 
 	.vc-shiki-container {
-		background-color: rgba(64,64,64,0.4) !important;
+		background: var(--control-secondary-background-default) !important;
 	}
 
 	/* Fit and finishes to account for the transparent elements */
-	[class*="container"][class*="usesCardRows"], /* User activity cards */
-	[class*="codeContainer"] > [class*="scrollbarGhostHairline"] {
-		background: rgba(64,64,64,0.4) !important;
+	[data-list-item-id*="chat-messages___divider"][class*="isUnread"] {
+		border-top: thin solid var(--divider-color) !important;
+	}
+	[data-list-item-id*="chat-messages___divider"][class*="isUnread"] > [class*="content"] {
+		background: var(--divider-color) !important;
+		color: var(--white) !important;
+	}
+	[data-list-item-id*="chat-messages___divider"] {
+		border-top: thin solid rgba(64,64,64,1);
+	}
+	[data-list-item-id*="chat-messages___divider"] > [class*="content"] {
+		background: rgba(64,64,64,1);
+		color: var(--chat-text-muted);
 	}
 	[class*="sidebarList"] {
 		backdrop-filter: none !important;
