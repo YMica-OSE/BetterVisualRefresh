@@ -34,7 +34,6 @@
 		background-position: center !important;
 		background-size: cover !important;
 	}
-	[class*="appMount"] > [class*="loading"], /* Placeholder before the Discord logo shows when starting up */
 	[class*="page"][role="status"] > [class*="header"], [class*="page"][role="status"] > [class*="channel"], /* Server loading place holders */
 	[class*="app_"], [class*="bg_"], /* Extra background layers */
 	[class*="guilds"], [class*="sidebar"]:after, /* Servers bar */
@@ -57,8 +56,9 @@
 		background-color: transparent !important;
 	}
 
-	/* Make certain areas darker for contrast */ 
-	[class*="guildSidebar"][role="status"], /* Server loading place holders */
+	/* Make certain areas darker for contrast */
+	[class*="appMount"] > [class*="loading"], /* Placeholder before the Discord logo shows when starting up */
+	[class*="guildSidebar"][role="status"], /* Server loading place holder */
 	[class*="wrapper"][class*="video"], /* Background of the VC page (yes it has 2 layers for some reason) */
 	[class*="chatLayerWrapper"] > [class*="resizeHandle"], /* VC chat side panel resize handle */
 	[class*="sidebarList"] > [class*="container"], /* Server channels list area */
@@ -81,7 +81,7 @@
 	[class*="chatContent"], [class*="themed"], [class*="applicationStore"], [class*="shop_"] {
 		background-color: rgba(0,0,0,0.25) !important;
 	}
-	[class*="page"][role="status"] {
+	[class*="page"][role="status"] { /* Another server loading place holder */
 		background-color: rgba(0,0,0,0.5) !important;
 	}
 	[class*="chatLayerWrapper"]:has([class*="resizeHandle"]) > [class*="container"] { /* VC chat side panel itself */
