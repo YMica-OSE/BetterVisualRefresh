@@ -28,8 +28,7 @@
 		border-color: rgba(172,172,172,1) !important;
 	}
 	/* Set transparency for the base background layer */
-	body,
-	[class*="appMount"] > [class*="loading"] { /* Placeholder before the Discord logo shows when starting up */
+	body {
 		background-color: rgba(0,0,0,0.4) !important;
 	}
 
@@ -40,6 +39,7 @@
 		background-position: center !important;
 		background-size: cover !important;
 	}
+	[class*="appMount"] > [class*="loading"], /* Placeholder before the Discord logo shows when starting up */
 	[class*="page"][role="status"] > [class*="header"], [class*="page"][role="status"] > [class*="channel"], /* Server loading place holders */
 	[class*="app_"], [class*="bg_"], /* Extra background layers */
 	[class*="guilds"], [class*="sidebar"]:after, /* Servers bar */

@@ -51,6 +51,10 @@ nav[class*="guilds_"] {
 		}
 	}
 
+	#guild-list-unread-dms > div {
+		height: var(--guildbar-avatar-size) !important;
+	}
+
 	[class*="isExpanded__"] {
 		[class*="stack_"] {
 			height: auto !important;
