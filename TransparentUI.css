@@ -58,7 +58,7 @@
 	}
 
 	/* Make certain areas darker for contrast */ 
-	[class*="guildSidebar"][role="status"], [class*="page"][role="status"], /* Server loading place holders */
+	[class*="guildSidebar"][role="status"], /* Server loading place holders */
 	[class*="wrapper"][class*="video"], /* Background of the VC page (yes it has 2 layers for some reason) */
 	[class*="chatLayerWrapper"] > [class*="resizeHandle"], /* VC chat side panel resize handle */
 	[class*="sidebarList"] > [class*="container"], /* Server channels list area */
@@ -80,6 +80,9 @@
 	[class*="shop"] > div > [class*="themed"], /* Top bar of Shop page */
 	[class*="chatContent"], [class*="themed"], [class*="applicationStore"], [class*="shop_"] {
 		background-color: rgba(0,0,0,0.25) !important;
+	}
+	[class*="page"][role="status"] {
+		background-color: rgba(0,0,0,0.5) !important;
 	}
 	[class*="chatLayerWrapper"]:has([class*="resizeHandle"]) > [class*="container"] { /* VC chat side panel itself */
 		background: none !important;
