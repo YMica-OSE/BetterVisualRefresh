@@ -23,7 +23,8 @@
 		border-color: rgba(172,172,172,1) !important;
 	}
 	/* Set transparency for the base background layer */
-	body {
+	body,
+	[class*="appMount"] > [class*="loading"] { /* Placeholder before the Discord logo shows when starting up */
 		background-color: rgba(0,0,0,0.4) !important;
 	}
 
@@ -57,7 +58,6 @@
 	}
 
 	/* Make certain areas darker for contrast */
-	[class*="appMount"] > [class*="loading"], /* Placeholder before the Discord logo shows when starting up */
 	[class*="guildSidebar"][role="status"], /* Server loading place holder */
 	[class*="wrapper"][class*="video"], /* Background of the VC page (yes it has 2 layers for some reason) */
 	[class*="chatLayerWrapper"] > [class*="resizeHandle"], /* VC chat side panel resize handle */
