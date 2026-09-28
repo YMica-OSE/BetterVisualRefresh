@@ -146,8 +146,13 @@ div[class*="inviteButton"] { display: none !important; }
 	}
 }
 
-/* Transparent loading screen [computing_cat] */
+/* Boxed loading screen [me] */
 [class*="fixClipping"] {
-	background: 0 0;
-	backdrop-filter: blur(15px);
+	border: 1px solid var(--border-normal);
+	border-radius: 16px;
+	top: 50% !important;
+	left: 50% !important;
+	transform: translate(-50%, -50%);
+	width: 500px;
+	height: 500px;
 }
