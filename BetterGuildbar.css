@@ -1,0 +1,59 @@
+/* BETTER VISUAL REFRESH by Yae Mica.
+   Mandatory Dependency: Better Guildbar (GuildbarRevert except it only fixes the guild sizes)
+   Forked from https://scattagain.github.io/VencordStuff/css/GuildbarRevert.css
+*/
+
+:root {
+	--guildbar-avatar-size: 48px;
+	--blob-scale: 48;
+
+	--guildbar-folder-size: var(--guildbar-avatar-size);
+	--folder-blob-scale: var(--blob-scale);
+
+	--custom-guild-list-padding: 12px;
+	--custom-guild-list-width: calc(
+		max(var(--guildbar-avatar-size), var(--guildbar-folder-size))
+		+ var(--custom-guild-list-padding) * 2
+	);
+}
+
+nav[class*="guilds_"] {
+	defs, 
+	[class*="blobContainer_"],
+	[class*="listItemWrapper__"],
+	[class*="wrapper_"]:not([class*="listItem__"] > [class*="wrapper_"]),
+	svg[class*="placeholderMask__"],
+	svg:not([class*="placeholderMask__"]) > foreignObject {
+		width: var(--guildbar-avatar-size) !important;
+		height: var(--guildbar-avatar-size) !important;
+	}
+
+	[class*="shiftSVG_"] {
+		top: 0px;
+		left: 0px;
+		foreignObject {
+			transform: translate(-4px, -4px);
+		}
+	}
+
+	mask {
+		--badge-offset: calc(var(--guildbar-avatar-size) - 40px);
+		&:not([class*="folderHeader__"] mask) {
+			use[href$="-lower_badge_masks"] {
+				translate: var(--badge-offset) var(--badge-offset);
+			}
+			use[href$="-upper_badge_masks"] {
+				translate: var(--badge-offset);
+			}
+			use[href$="-blob_mask"] {
+				scale: calc(var(--blob-scale) / 40);
+			}
+		}
+	}
+
+	[class*="isExpanded__"] {
+		[class*="stack_"] {
+			height: auto !important;
+		}
+	}
+}

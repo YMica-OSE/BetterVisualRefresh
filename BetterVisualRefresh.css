@@ -16,8 +16,7 @@
 */
 
 /* Neccesary imports (MUST BE BEFORE ANY CSS CODE) */
-@import url("https://raw.githubusercontent.com/YMica-OSE/BetterVisualRefresh/refs/heads/main/GuildbarRevert.css");
-@import url("https://raw.githubusercontent.com/Krammeth/css-snippets/refs/heads/main/CompactButtons.css");
+@import url("https://raw.githubusercontent.com/YMica-OSE/BetterVisualRefresh/refs/heads/main/BetterGuildbar.css");
 
 /* ========== AREA: SERVER LIST BAR ========== */
 
@@ -51,7 +50,6 @@ div[class*="listItem"]:has([data-list-item-id="guildsnav___app-download-button"]
 		padding-top: 8px !important;
 	}
 }
-[class*="systemBar"] { z-index: 33550336; }
 [class*="bar"][data-window-chrome=true] {
 	padding: unset;
 	> [class*="title"] {
@@ -72,33 +70,6 @@ div[class*="listItem"]:has([data-list-item-id="guildsnav___app-download-button"]
 		}
 		> a[href="https://support.discord.com"] {
 			display: none; /* Discord, we don't need your useless help page... */
-		}
-		> [class*="button"] {
-			height: 14px;
-			width: 16px;
-			padding: 6px;
-			&:hover /* Make the buttons have a correct hover effect */
-			{
-				background-color: var(--background-modifier-hover); 
-			}
-		}
-		> [class*="vc-toolbox-btn"] {
-			height: 14px;
-			width: 16px;
-			padding: 6px;
-			&:hover {
-				background-color: var(--background-modifier-hover); 
-			}
-		}
-		> [class*="clickable"] {
-			height: 14px;
-			width: 16px;
-			padding: 6px;
-			margin: 0px;
-			&:hover
-			{
-				background-color: var(--background-modifier-hover);
-			}
 		}
 	}
 }
@@ -163,12 +134,6 @@ div[class*="inviteButton"] { display: none !important; }
 	[aria-label="Send a gift"] {
 		display: none;
 	}
-	[aria-label="Add Media"] {
-		display: none;
-	}
-	[class*="spacer"] {
-		display: none;
-	}
 }
 /* Hide excess arrow buttons next to voice control buttons [fazzi]
   (can always access them with right click) */
@@ -179,12 +144,4 @@ div[class*="inviteButton"] { display: none !important; }
 			display: none;
 		}
 	}
-}
-
-/* ========== EXTRA TWEAKS ========== */
-
-/* Transparent loading screen [computing_cat] */
-[class*="fixClipping"] {
-	background: 0 0;
-	backdrop-filter: blur(15px);
 }
