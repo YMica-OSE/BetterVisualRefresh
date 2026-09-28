@@ -145,3 +145,9 @@ div[class*="inviteButton"] { display: none !important; }
 		}
 	}
 }
+
+/* Transparent loading screen [computing_cat] */
+[class*="fixClipping"] {
+	background: 0 0;
+	backdrop-filter: blur(15px);
+}
