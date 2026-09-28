@@ -51,6 +51,11 @@ nav[class*="guilds_"] {
 		}
 	}
 
+	[class*="childWrapper__"] > div > svg {
+		scale: calc(var(--blob-scale) / 40);
+		transform: translate(3.5px, 3.5px)
+	}
+
 	#guild-list-unread-dms > div {
 		height: var(--guildbar-avatar-size) !important;
 	}
