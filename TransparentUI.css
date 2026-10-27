@@ -63,6 +63,7 @@
 
 	/* Make certain areas darker for contrast */
 	[class*="guildSidebar"][role="status"], /* Server loading place holder */
+	[class*="channelArea"] > div, /* Chat area with the new friends side bar */
 	[class*="wrapper"][class*="video"], /* Background of the VC page (yes it has 2 layers for some reason) */
 	[class*="chatLayerWrapper"] > [class*="resizeHandle"], /* VC chat side panel resize handle */
 	[class*="sidebarList"] > [class*="container"], /* Server channels list area */
@@ -85,7 +86,8 @@
 	[class*="chatContent"], [class*="themed"], [class*="applicationStore"], [class*="shop_"] {
 		background-color: rgba(0,0,0,0.25) !important;
 	}
-	[class*="page"][role="status"] { /* Another server loading place holder */
+	[class*="page"][role="status"], /* Another server loading place holder */
+	[class*="page_"] > div > [class*="container"] { /* Server friends side bar */
 		background-color: rgba(0,0,0,0.5) !important;
 	}
 	[class*="chatLayerWrapper"]:has([class*="resizeHandle"]) > [class*="container"] { /* VC chat side panel itself */

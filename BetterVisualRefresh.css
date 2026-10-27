@@ -86,7 +86,6 @@ div[class*="listItem"]:has([data-list-item-id="guildsnav___app-download-button"]
 		transition: opacity .25s ease;
 	}
 	width: 32px !important;
-	padding-left: 8px !important;
 	background: none;
 	border-color: transparent;
 	transition: background .25s ease,
