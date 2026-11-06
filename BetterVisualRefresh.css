@@ -15,6 +15,9 @@
    Be sure to give it a read first so you know what's gonna happen.
 */
 
+/* Neccesary imports (MUST BE BEFORE ANY CSS CODE) */
+@import url("https://raw.githubusercontent.com/YMica-OSE/BetterVisualRefresh/refs/heads/main/BetterGuildbar.css");
+
 /* ========== AREA: SERVER LIST BAR ========== */
 
 /* Revert guild icons look (1st import) [scattagain] */
@@ -92,7 +95,9 @@ div[class*="listItem"]:has([data-list-item-id="guildsnav___app-download-button"]
 [class*="focused"] > [class*="searchBar"],
 [class*="open"] > [class*="searchBar"] {
 	[class*="editor"] {
+		padding: 8px !important;
 		opacity: 1 !important;
+		transition: padding .25s ease;
 	}
 	width: 244px !important;
 	background: var(--background-gradient-low, var(--input-background-default));
@@ -126,10 +131,8 @@ div[class*="inviteButton"] { display: none !important; }
 
 /* Remove Gift button [me] 
    (the label might change if you use another language)  */
-[class*="buttons"] {
-	[aria-label="Send a gift"] {
-		display: none;
-	}
+[class*="button"][aria-label="Give a Gift"] {
+	display: none;
 }
 /* Hide excess arrow buttons next to voice control buttons [fazzi]
   (can always access them with right click) */

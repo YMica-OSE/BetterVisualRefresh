@@ -28,11 +28,17 @@ nav[class*="guilds_"] {
 		height: var(--guildbar-avatar-size) !important;
 	}
 
-	[class*="shiftSVG_"] {
+	svg[class*="shiftSVG_"] {
 		top: 0px;
 		left: 0px;
 		foreignObject {
 			transform: translate(-4px, -4px);
+		}
+	}
+	svg[class*="shiftSVG_"] > mask {
+		rect {
+			width: var(--guildbar-avatar-size);
+			height: var(--guildbar-avatar-size);
 		}
 	}
 
