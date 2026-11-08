@@ -1,4 +1,10 @@
-# BVR update history 
+# BVR update history
+- `20261108-1633`: I kept forgetting about this file. Once again LOADS of changes has been made since the last changelog update:
+  - MASSIVE refactoring was done to the entire theme set, in hopes to optimize the performance. The main BVR snippet, as of this update, is very basic - Only the core QoL changes are present.
+  - The Guildbar snippet now only fixes the server icon size inconsistency instead of reverting it to the old design, which was causing massive performance hits previously - Part of this is to also respect Discord's new design principle: *"People are circles, things are squircles"*, which makes sense.
+  - Multiple adjustments to the TransparentUI snippet, mainly adding transparency to a bunch more elements.
+  - And various other things... if you are interested, can check out [the diff here](https://github.com/YMica-OSE/BetterVisualRefresh/compare/16bb70b16f39bbb9025d7ef7363ddacb1837cc69...main).
+  > Side note: As of this commit, Discord has been working on a **Rust rewrite of all of their clients** (known as ["Discord Phoenix"](https://x.com/svishnevskiy/status/2118081920194203799)). That means client mods, CSS themes like this and things alike are soon to be things of the past. It's been a fun ride for all of us, but this sacrifice is worth since it will address Discord's current biggest problem: **Performance.** 
 - `20260605-1908`: Another unfocused search box fix.
 - `20260604-1404`: Out of boredom, I decided to create a completely new theme that can be used standalone or as an addon to BVR. TransparentUI is here, allowing the window material underneath your client to shine through, letting you utilize mods like OpenGlass/DWMBlurGlass to their full potential. Currently this is only available on Windows, and requires the use of a non-nitro color theme.
 - `20260527-2243`: Fixed the unfocused search box being stuck in "expanded" position, creating a huge gap to its right.

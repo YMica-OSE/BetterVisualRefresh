@@ -66,9 +66,7 @@ nav[class*="guilds_"] {
 		height: var(--guildbar-avatar-size) !important;
 	}
 
-	[class*="isExpanded__"] {
-		[class*="stack_"] {
-			height: auto !important;
-		}
+	[class*="isExpanded_"] > [class*="stack_"] {
+		height: auto !important;
 	}
 }
